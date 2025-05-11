@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bacy6btwj5k6b"]
+
+[ext_resource type="Script" uid="uid://dcql2u7hfuh7o" path="res://enemy/enemy.gd" id="1_g11pg"]
+[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://art/tile_0110.png" id="1_ol05f"]
+[ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://art/arrow.png" id="3_lr0j7"]
+[ext_resource type="PackedScene" uid="uid://djvksvihqwgwq" path="res://Scenes/ui/stats_ui.tscn" id="4_rnm7a"]
+[ext_resource type="PackedScene" uid="uid://d2nsn024j2m55" path="res://Scenes/ui/intent_ui.tscn" id="5_jxye3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6dok"]
+
+[node name="Enemy" type="Area2D" groups=["enemies"]]
+collision_layer = 4
+script = ExtResource("1_g11pg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ol05f")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(17, 0)
+rotation = -1.5708
+texture = ExtResource("3_lr0j7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_o6dok")
+
+[node name="StatsUI" parent="." instance=ExtResource("4_rnm7a")]
+offset_top = 8.0
+offset_bottom = 24.0
+
+[node name="IntentUI" parent="." instance=ExtResource("5_jxye3")]
+offset_left = -19.0
+offset_top = -24.0
+offset_right = 21.0
+offset_bottom = -10.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
