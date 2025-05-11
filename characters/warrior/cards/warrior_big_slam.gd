@@ -1,9 +1,9 @@
 extends Card
 
-@export var optional_sound: AudioStream
-
 
 func apply_effects(targets: Array[Node]) -> void:
-	print("My card has been played!")
-	print("Targets: %s" % targets)
-
+	var damage_effect := DamageEffect.new()
+	damage_effect.amount = 10
+	damage_effect.sound = sound
+	damage_effect.execute(targets)
+	print("this will also apply a status effect!")

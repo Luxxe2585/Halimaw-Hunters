@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardPile" load_steps=12 format=3 uid="uid://2evlkv6jthcs"]
+
+[ext_resource type="Script" uid="uid://dtdtresv3yc0e" path="res://custom_resources/card.gd" id="1_ads5s"]
+[ext_resource type="Resource" uid="uid://cg3ydmig1j6sd" path="res://characters/warrior/cards/warrior_true_strength.tres" id="2_01wkr"]
+[ext_resource type="Script" uid="uid://c64c61pg3gu04" path="res://custom_resources/card_pile.gd" id="2_fcyjj"]
+[ext_resource type="Resource" uid="uid://bi2pjinwnglpl" path="res://characters/warrior/cards/warrior_rare_1.tres" id="3_ypb8s"]
+[ext_resource type="Resource" uid="uid://dnyu54ag1gknv" path="res://characters/warrior/cards/warrior_rare_2.tres" id="4_2ypy4"]
+[ext_resource type="Resource" uid="uid://i8urcy5t3s7v" path="res://characters/warrior/cards/warrior_slash.tres" id="4_ypb8s"]
+[ext_resource type="Resource" uid="uid://bq4kbrbih714i" path="res://characters/warrior/cards/warrior_common_1.tres" id="5_wlxe0"]
+[ext_resource type="Resource" uid="uid://dps888r8j8jf3" path="res://characters/warrior/cards/warrior_big_slam.tres" id="6_wlxe0"]
+[ext_resource type="Resource" uid="uid://xm8o8sbqtngu" path="res://characters/warrior/cards/warrior_common_2.tres" id="7_diodg"]
+[ext_resource type="Resource" uid="uid://btj7jmj8iptw3" path="res://characters/warrior/cards/warrior_uncommon_1.tres" id="9_i3pt2"]
+[ext_resource type="Resource" uid="uid://usmru5ufw088" path="res://characters/warrior/cards/warrior_uncommon_2.tres" id="10_trexa"]
+
+[resource]
+script = ExtResource("2_fcyjj")
+cards = Array[ExtResource("1_ads5s")]([ExtResource("2_01wkr"), ExtResource("3_ypb8s"), ExtResource("4_2ypy4"), ExtResource("5_wlxe0"), ExtResource("4_ypb8s"), ExtResource("7_diodg"), ExtResource("6_wlxe0"), ExtResource("9_i3pt2"), ExtResource("10_trexa"), ExtResource("6_wlxe0")])
+metadata/_custom_type_script = "uid://c64c61pg3gu04"

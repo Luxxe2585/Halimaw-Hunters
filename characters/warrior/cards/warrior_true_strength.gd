@@ -1,9 +1,5 @@
 extends Card
 
-@export var optional_sound: AudioStream
-
 
 func apply_effects(targets: Array[Node]) -> void:
-	print("My card has been played!")
-	print("Targets: %s" % targets)
-
+	print("This will apply a cool status to to our character")

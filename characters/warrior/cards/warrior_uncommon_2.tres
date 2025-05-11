@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://usmru5ufw088"]
+
+[ext_resource type="Texture2D" uid="uid://c24y6l0ivlqp7" path="res://art/tile_0108.png" id="1_7sgp8"]
+[ext_resource type="Script" uid="uid://5vve1gstlykb" path="res://characters/warrior/cards/warrior_true_strength.gd" id="2_jkpro"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/enemy_attack.ogg" id="3_mnoq8"]
+
+[resource]
+script = ExtResource("2_jkpro")
+id = "warrior_uncommon_2"
+type = 0
+rarity = 1
+target = 2
+cost = 2
+icon = ExtResource("1_7sgp8")
+tooltip_text = "[center]Uncommon Card.[/center]"
+sound = ExtResource("3_mnoq8")
+metadata/_custom_type_script = "uid://dtdtresv3yc0e"
