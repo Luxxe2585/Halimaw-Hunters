@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://k3u6nxble6hy"]
+
+[ext_resource type="PackedScene" uid="uid://12uilatvingd" path="res://enemies/witch/witch_enemy_ai.tscn" id="1_x5m4x"]
+[ext_resource type="Script" uid="uid://duh6bub572k0a" path="res://custom_resources/enemy_stats.gd" id="1_xv4np"]
+[ext_resource type="Texture2D" uid="uid://dxg7y1wlh86kj" path="res://art/tile_0100.png" id="2_flq72"]
+
+[resource]
+script = ExtResource("1_xv4np")
+ai = ExtResource("1_x5m4x")
+max_health = 45
+art = ExtResource("2_flq72")
+metadata/_custom_type_script = "uid://duh6bub572k0a"

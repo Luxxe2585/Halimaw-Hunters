@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://b0b5kf5s0kev2"]
+
+[ext_resource type="Script" uid="uid://bauc2jrs82bkk" path="res://custom_resources/battle_stats.gd" id="1_0h4fe"]
+[ext_resource type="PackedScene" uid="uid://di2rkqmccd15o" path="res://battles/tier_2_witch.tscn" id="1_rojo4"]
+
+[resource]
+script = ExtResource("1_0h4fe")
+battle_tier = 2
+weight = 1.0
+gold_reward_min = 92
+gold_reward_max = 109
+enemies = ExtResource("1_rojo4")
+metadata/_custom_type_script = "uid://bauc2jrs82bkk"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="StrengthStatus" load_steps=3 format=3 uid="uid://dlbfpsoi24o5d"]
+
+[ext_resource type="Texture2D" uid="uid://bnu6jb6fcx4rx" path="res://art/muscle.png" id="1_jqcf5"]
+[ext_resource type="Script" uid="uid://d2lswbfmrkb3c" path="res://statuses/strength.gd" id="2_jqcf5"]
+
+[resource]
+script = ExtResource("2_jqcf5")
+id = "strength"
+type = 2
+stack_type = 1
+can_expire = false
+can_be_negative = true
+duration = 2
+stacks = 2
+icon = ExtResource("1_jqcf5")
+tooltip = "TODO"
+metadata/_custom_type_script = "uid://by2i7cm344o7g"

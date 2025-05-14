@@ -77,6 +77,11 @@ custom_minimum_size = Vector2(0, 14)
 layout_mode = 2
 text = "New Run"
 
+[node name="Encyclopedia" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+text = "Encyclopedia"
+
 [node name="Exit" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 14)
 layout_mode = 2

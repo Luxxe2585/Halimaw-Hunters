@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="TrueStrengthForm" load_steps=3 format=3 uid="uid://q32tq5qass13"]
+
+[ext_resource type="Texture2D" uid="uid://cn2c1psh561cc" path="res://art/tile_0127.png" id="1_5fl3q"]
+[ext_resource type="Script" uid="uid://dho8yoyyc45ob" path="res://statuses/true_strength_form.gd" id="2_5fl3q"]
+
+[resource]
+script = ExtResource("2_5fl3q")
+id = "true_strength_form"
+type = 0
+stack_type = 0
+can_expire = false
+can_be_negative = false
+duration = 0
+stacks = 0
+icon = ExtResource("1_5fl3q")
+tooltip = "TODO"
+metadata/_custom_type_script = "uid://by2i7cm344o7g"

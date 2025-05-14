@@ -1,0 +1,55 @@
+[gd_scene load_steps=15 format=3 uid="uid://12uilatvingd"]
+
+[ext_resource type="Script" uid="uid://d16w6f4ixp8nf" path="res://enemy/enemy_action_picker.gd" id="1_tpigd"]
+[ext_resource type="Script" uid="uid://l0m31bly6db5" path="res://enemies/witch/witch_attack_action.gd" id="2_18260"]
+[ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://art/tile_0104.png" id="3_knsyo"]
+[ext_resource type="Script" uid="uid://clhy3p41f44cy" path="res://custom_resources/intent.gd" id="4_y2ugi"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/enemy_attack.ogg" id="5_xw0d7"]
+[ext_resource type="Script" uid="uid://bqn8h3bui5o4f" path="res://enemies/witch/witch_block_action.gd" id="6_y2ugi"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tile_0102.png" id="7_xw0d7"]
+[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/enemy_block.ogg" id="8_nwka6"]
+[ext_resource type="Script" uid="uid://cph22o5b1qkbx" path="res://enemies/witch/witch_ready_action.gd" id="9_2a7kw"]
+[ext_resource type="Texture2D" uid="uid://c2xhttrclo1r7" path="res://art/tile_0116.png" id="10_knsyo"]
+[ext_resource type="Script" uid="uid://7sv7ufk8ayjv" path="res://enemies/witch/witch_boom_action.gd" id="11_y2ugi"]
+
+[sub_resource type="Resource" id="Resource_kxwnk"]
+script = ExtResource("4_y2ugi")
+number = "12"
+icon = ExtResource("3_knsyo")
+metadata/_custom_type_script = "uid://clhy3p41f44cy"
+
+[sub_resource type="Resource" id="Resource_nwka6"]
+script = ExtResource("4_y2ugi")
+number = "15"
+icon = ExtResource("7_xw0d7")
+metadata/_custom_type_script = "uid://clhy3p41f44cy"
+
+[sub_resource type="Resource" id="Resource_y2ugi"]
+script = ExtResource("4_y2ugi")
+number = ""
+icon = ExtResource("10_knsyo")
+metadata/_custom_type_script = "uid://clhy3p41f44cy"
+
+[node name="WitchEnemyAI" type="Node"]
+script = ExtResource("1_tpigd")
+
+[node name="WitchAttackAction" type="Node" parent="."]
+script = ExtResource("2_18260")
+intent = SubResource("Resource_kxwnk")
+sound = ExtResource("5_xw0d7")
+type = 1
+chance_weight = 3.0
+
+[node name="WitchBlockAction" type="Node" parent="."]
+script = ExtResource("6_y2ugi")
+intent = SubResource("Resource_nwka6")
+sound = ExtResource("8_nwka6")
+type = 1
+chance_weight = 3.0
+
+[node name="WitchReadyAction" type="Node" parent="."]
+script = ExtResource("9_2a7kw")
+intent = SubResource("Resource_y2ugi")
+
+[node name="WitchBoomAction" type="Node" parent="."]
+script = ExtResource("11_y2ugi")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://di2rkqmccd15o"]
+
+[ext_resource type="PackedScene" uid="uid://bacy6btwj5k6b" path="res://enemy/enemy.tscn" id="1_bw1wg"]
+[ext_resource type="Resource" uid="uid://k3u6nxble6hy" path="res://enemies/witch/witch_enemy.tres" id="2_1ddx5"]
+
+[node name="Tier2_Witch" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_bw1wg")]
+position = Vector2(226, 75)
+stats = ExtResource("2_1ddx5")
