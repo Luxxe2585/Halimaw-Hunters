@@ -12,6 +12,7 @@ signal tooltip_hide_requested()
 # Player-related events
 signal player_hand_drawn
 signal player_hand_discarded
+signal player_turn_started
 signal player_turn_ended
 signal player_died
 signal player_health_loss
@@ -22,16 +23,21 @@ signal enemy_turn_ended
 signal enemy_died(enemy: Enemy)
 
 # Battle-related events
+signal battle_started
+signal after_stats_battle_started
 signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
 signal battle_won
-
-# Elite-related events
+signal status_tooltip_requested(statuses: Array[Status])
 
 
 # Map-related events
 signal map_exited(room: Room)
 
 # Shop-related events
+signal shop_entered(shop: Shop)
+signal shop_relic_bought(relic: Relic, gold_cost: int)
+signal shop_card_bought(card: Card, gold_cost: int)
+signal shop_card_removal_bought(card: Card, gold_cost: int)
 signal shop_exited
 
 # Campfire-related events
@@ -41,7 +47,10 @@ signal campfire_exited
 signal battle_reward_exited
 
 # Treasure Room-related events
-signal treasure_room_exited
+signal treasure_room_exited(found_relic: Relic)
 
 # GAME_EVENT-related events
 signal map_event_exited
+
+# Relic-related events
+signal relic_tooltip_requested(relic: Relic)

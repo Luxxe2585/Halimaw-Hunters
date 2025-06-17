@@ -11,6 +11,7 @@ type = 0
 rarity = 1
 target = 2
 cost = 2
+exhausts = false
 icon = ExtResource("1_7sgp8")
 tooltip_text = "[center]Uncommon Card.[/center]"
 sound = ExtResource("3_mnoq8")

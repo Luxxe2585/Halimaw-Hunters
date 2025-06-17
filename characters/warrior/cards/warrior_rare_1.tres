@@ -6,10 +6,12 @@
 [resource]
 script = ExtResource("1_n35vx")
 id = "warrior_rare_1"
+name = ""
 type = 0
 rarity = 2
 target = 2
 cost = 3
+exhausts = false
 icon = ExtResource("1_sjcji")
-tooltip_text = "[center]Deal [color=\"ff0000\"]12[/color] damage.[/center]"
+tooltip_text = "[center]Deal [color=\"ff0000\"]%s[/color] damage.[/center]"
 metadata/_custom_type_script = "uid://dtdtresv3yc0e"

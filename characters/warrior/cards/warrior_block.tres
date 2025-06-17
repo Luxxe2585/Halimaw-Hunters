@@ -7,10 +7,12 @@
 [resource]
 script = ExtResource("2_5bx43")
 id = "warrior_block"
+name = ""
 type = 1
 rarity = 0
 target = 0
 cost = 1
+exhausts = false
 icon = ExtResource("1_7ceko")
-tooltip_text = "[center]Gain [color=\"0044ff\"]5[/color] block.[/center]"
+tooltip_text = "[center]Gain [color=\"0044ff\"]%s[/color] block.[/center]"
 sound = ExtResource("3_avlh5")

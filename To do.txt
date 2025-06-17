@@ -1,0 +1,20 @@
+Test resolutions to see which ones are best for card visual overhaul
+Implement QuizEvent, make an array that keeps track of the id of all events triggered by the player in a run
+then match it with the id of the events that will quiz about those specific events
+Edit the card resource to include card names
+figure out how to generate a new level for the map
+Implement dynamic level text at map generation
+Implement dynamic art for boss room icon
+Create a card removal system
+Redo card shop costs to have a cost range per rarity (create a setter function)
+Redo relic shop costs to have individual pricing (min, max)
+Edit status, modifier, and relic tooltips to hover around the mouse (instead of opening a window) on mouse entered instead of clicked.
+create a card upgrade system
+figure out how to implement datu puti's minion system (idea is similar to Defect Orbs)
+create the regen status
+create the poison status
+edit truestrengthstatus to be stackable
+create defense modifier
+create ruptured (reduced block gain) status
+overhaul game visuals
+import game assets

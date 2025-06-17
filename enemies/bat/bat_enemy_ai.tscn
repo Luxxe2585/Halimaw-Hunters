@@ -11,12 +11,12 @@
 
 [sub_resource type="Resource" id="Resource_jqfva"]
 script = ExtResource("4_cawvi")
-number = "2x4"
+base_text = "2x%s"
 icon = ExtResource("3_y3ko8")
 
 [sub_resource type="Resource" id="Resource_y6rf0"]
 script = ExtResource("4_cawvi")
-number = ""
+base_text = ""
 icon = ExtResource("7_abab5")
 
 [node name="BatEnemyAI" type="Node"]

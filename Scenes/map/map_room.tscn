@@ -6,22 +6,6 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_w8v3i"]
 radius = 20.0
 
-[sub_resource type="Animation" id="Animation_5une1"]
-resource_name = "highlight"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.25, 1.25)]
-}
-
 [sub_resource type="Animation" id="Animation_lwr3f"]
 length = 0.001
 tracks/0/type = "value"
@@ -47,6 +31,22 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5une1"]
+resource_name = "highlight"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25)]
 }
 
 [sub_resource type="Animation" id="Animation_ppoya"]
@@ -95,7 +95,7 @@ script = ExtResource("1_w8v3i")
 
 [node name="Line2D" type="Line2D" parent="Visuals"]
 modulate = Color(1, 1, 1, 0)
-points = PackedVector2Array(-18, 14, 0, 18, 20, 12, 12, -14, -6, -16, -16, -8)
+points = PackedVector2Array(-12, 8, 0, 14, 12, 8, 8, -10, -6, -10, -12, -2)
 closed = true
 width = 2.0
 default_color = Color(0.393086, 0.393086, 0.393085, 1)

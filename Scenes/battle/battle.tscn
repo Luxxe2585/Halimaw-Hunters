@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c8to7m7o1dosf"]
+[gd_scene load_steps=24 format=3 uid="uid://c8to7m7o1dosf"]
 
 [ext_resource type="Script" uid="uid://drbdqpx6v7t7t" path="res://Scenes/battle/battle.gd" id="1_x4urx"]
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="1_yssxv"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bv0wmctm8sthw" path="res://Scenes/ui/battle_over_panel.tscn" id="17_krfx7"]
 [ext_resource type="Texture2D" uid="uid://csqtc1bs4lqu4" path="res://art/discard.png" id="18_dovkv"]
 [ext_resource type="PackedScene" uid="uid://bnnfg3ece55j8" path="res://Scenes/ui/card_pile_view.tscn" id="21_4nobf"]
+[ext_resource type="PackedScene" uid="uid://b3r6cgoaaxhuc" path="res://Scenes/ui/status_view.tscn" id="22_iqjay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu5g3"]
 size = Vector2(256, 90)
@@ -32,6 +33,7 @@ music = ExtResource("3_etlyp")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 modulate = Color(0.560955, 0.560955, 0.560955, 1)
 texture = ExtResource("1_yssxv")
 centered = false
@@ -67,7 +69,7 @@ stats = ExtResource("4_3xvnf")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_qr86g")]
 
-[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("player", "hand")]
+[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("player", "hand") groups=["player_handler"]]
 script = ExtResource("8_0i6y0")
 player = NodePath("../Player")
 hand = NodePath("../BattleUI/Hand")
@@ -75,7 +77,7 @@ hand = NodePath("../BattleUI/Hand")
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 script = ExtResource("8_y8c34")
 
-[node name="Hand" type="HBoxContainer" parent="BattleUI"]
+[node name="Hand" type="HBoxContainer" parent="BattleUI" node_paths=PackedStringArray("player")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -88,6 +90,7 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 script = ExtResource("2_68tn6")
+player = NodePath("../../Player")
 char_stats = ExtResource("4_3xvnf")
 
 [node name="ManaUI" parent="BattleUI" instance=ExtResource("11_1ylny")]
@@ -196,4 +199,10 @@ visible = false
 
 [node name="DiscardPileView" parent="CardPileViews" instance=ExtResource("21_4nobf")]
 unique_name_in_owner = true
+visible = false
+
+[node name="StatusViewLayer" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="StatusView" parent="StatusViewLayer" instance=ExtResource("22_iqjay")]
 visible = false

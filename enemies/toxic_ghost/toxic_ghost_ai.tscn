@@ -1,0 +1,50 @@
+[gd_scene load_steps=14 format=3 uid="uid://dum1aen0ldnnk"]
+
+[ext_resource type="Script" uid="uid://d16w6f4ixp8nf" path="res://enemy/enemy_action_picker.gd" id="1_bchhv"]
+[ext_resource type="Script" uid="uid://b0j0kq1mi1ylx" path="res://enemies/toxic_ghost/toxic_ghost_muscle_buff_action.gd" id="2_4nfct"]
+[ext_resource type="Texture2D" uid="uid://c7xx3uproscj" path="res://art/tile_0128.png" id="3_a0hhr"]
+[ext_resource type="Script" uid="uid://clhy3p41f44cy" path="res://custom_resources/intent.gd" id="4_6alh0"]
+[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/enemy_block.ogg" id="5_460vo"]
+[ext_resource type="Script" uid="uid://ckbld2vr00w8n" path="res://enemies/toxic_ghost/toxic_ghost_attack_action.gd" id="6_a0hhr"]
+[ext_resource type="Texture2D" uid="uid://g3dwvxo1vxdw" path="res://art/attack_negative.png" id="7_460vo"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/enemy_attack.ogg" id="8_hqwas"]
+[ext_resource type="Script" uid="uid://c6ua86gswvv6x" path="res://enemies/toxic_ghost/toxic_ghost_block_action.gd" id="9_hqwas"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tile_0102.png" id="10_n3j28"]
+
+[sub_resource type="Resource" id="Resource_hqwas"]
+script = ExtResource("4_6alh0")
+base_text = ""
+icon = ExtResource("3_a0hhr")
+metadata/_custom_type_script = "uid://clhy3p41f44cy"
+
+[sub_resource type="Resource" id="Resource_n3j28"]
+script = ExtResource("4_6alh0")
+base_text = "%s"
+icon = ExtResource("7_460vo")
+metadata/_custom_type_script = "uid://clhy3p41f44cy"
+
+[sub_resource type="Resource" id="Resource_dciwe"]
+script = ExtResource("4_6alh0")
+base_text = ""
+icon = ExtResource("10_n3j28")
+metadata/_custom_type_script = "uid://clhy3p41f44cy"
+
+[node name="ToxicGhostEnemyAI" type="Node"]
+script = ExtResource("1_bchhv")
+
+[node name="MuscleBuffAction" type="Node" parent="."]
+script = ExtResource("2_4nfct")
+intent = SubResource("Resource_hqwas")
+sound = ExtResource("5_460vo")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("6_a0hhr")
+intent = SubResource("Resource_n3j28")
+sound = ExtResource("8_hqwas")
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("9_hqwas")
+intent = SubResource("Resource_dciwe")
+sound = ExtResource("5_460vo")
+type = 1
+chance_weight = 1.0

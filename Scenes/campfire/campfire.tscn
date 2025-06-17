@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://gxqxcm7et1b"]
+[gd_scene load_steps=16 format=3 uid="uid://gxqxcm7et1b"]
 
 [ext_resource type="Script" uid="uid://du2jyjax4dcmv" path="res://Scenes/campfire/campfire.gd" id="1_hp3ey"]
 [ext_resource type="Resource" uid="uid://cjfb6vtrdtpij" path="res://characters/warrior/warrior.tres" id="2_a38u6"]
 [ext_resource type="Texture2D" uid="uid://dincpwbgndygq" path="res://art/rarity.png" id="3_a38u6"]
+[ext_resource type="Texture2D" uid="uid://dytq0eumwvky6" path="res://art/tile_0074.png" id="4_w1t74"]
 
 [sub_resource type="Gradient" id="Gradient_a38u6"]
 offsets = PackedFloat32Array(0.333333, 1)
@@ -76,6 +77,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UILayer/TextureRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_2kqiq"]
 resource_name = "fade_out"
@@ -91,31 +104,43 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("UILayer/UI:modulate")
-tracks/1/interp = 2
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.3, 0.8),
-"transitions": PackedFloat32Array(1, 2),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.933333),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"_on_fade_out_finished"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UILayer/UI:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UILayer/TextureRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w1t74"]
@@ -157,17 +182,10 @@ process_material = SubResource("ParticleProcessMaterial_3jru0")
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="UI" type="VBoxContainer" parent="UILayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 10.0
-offset_top = -22.0
-offset_right = 74.0
-offset_bottom = 22.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 138.0
+offset_top = 48.0
+offset_right = 224.0
+offset_bottom = 101.0
 
 [node name="Title" type="Label" parent="UILayer/UI"]
 layout_mode = 2
@@ -176,23 +194,55 @@ label_settings = SubResource("LabelSettings_n7k1h")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Spacer" type="Control" parent="UILayer/UI"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/UI"]
 layout_mode = 2
 
-[node name="RestButton" type="Button" parent="UILayer/UI"]
+[node name="RestUI" type="VBoxContainer" parent="UILayer/UI/HBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="UILayer/UI/HBoxContainer/RestUI"]
+layout_mode = 2
+
+[node name="RestButton" type="Button" parent="UILayer/UI/HBoxContainer/RestUI"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 14)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Rest"
 
-[node name="Description" type="Label" parent="UILayer/UI"]
+[node name="Description" type="Label" parent="UILayer/UI/HBoxContainer/RestUI"]
 layout_mode = 2
 text = "+30% HP"
 horizontal_alignment = 1
+
+[node name="UpgradeUI" type="VBoxContainer" parent="UILayer/UI/HBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="UILayer/UI/HBoxContainer/UpgradeUI"]
+layout_mode = 2
+
+[node name="UpgradeButton" type="Button" parent="UILayer/UI/HBoxContainer/UpgradeUI"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 14)
+layout_mode = 2
+text = "Upgrade"
+
+[node name="Label" type="Label" parent="UILayer/UI/HBoxContainer/UpgradeUI"]
+layout_mode = 2
+text = "Improve
+cards"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UILayer"]
+offset_left = 21.0
+offset_top = 87.0
+offset_right = 62.0
+offset_bottom = 129.0
+texture = ExtResource("4_w1t74")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_w1t74")
 }
 
-[connection signal="pressed" from="UILayer/UI/RestButton" to="." method="_on_rest_button_pressed"]
+[connection signal="pressed" from="UILayer/UI/HBoxContainer/RestUI/RestButton" to="." method="_on_rest_button_pressed"]

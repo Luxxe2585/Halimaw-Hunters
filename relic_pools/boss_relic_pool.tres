@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="RelicPool" load_steps=3 format=3 uid="uid://kwhjrpg7eqem"]
+
+[ext_resource type="Script" uid="uid://bwcnlg8xhlicr" path="res://custom_resources/relic.gd" id="1_ca6b8"]
+[ext_resource type="Script" uid="uid://d3ifjt5i7x46i" path="res://custom_resources/relic_pool.gd" id="2_4k1y1"]
+
+[resource]
+script = ExtResource("2_4k1y1")
+relics = Array[ExtResource("1_ca6b8")]([])
+metadata/_custom_type_script = "uid://d3ifjt5i7x46i"

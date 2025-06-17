@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://xj4ybd4rymnk"]
+
+[ext_resource type="Script" uid="uid://bauc2jrs82bkk" path="res://custom_resources/battle_stats.gd" id="1_20u0m"]
+[ext_resource type="PackedScene" uid="uid://dihtsot062usa" path="res://battles/tier_3_toxic_ghost.tscn" id="1_mdho8"]
+
+[resource]
+script = ExtResource("1_20u0m")
+battle_tier = 3
+weight = 10.0
+gold_reward_min = 20
+gold_reward_max = 40
+enemies = ExtResource("1_mdho8")
+metadata/_custom_type_script = "uid://bauc2jrs82bkk"

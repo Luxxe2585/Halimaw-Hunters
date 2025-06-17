@@ -13,5 +13,5 @@ can_be_negative = false
 duration = 1
 stacks = 0
 icon = ExtResource("1_0rmh8")
-tooltip = "TODO"
+tooltip = "Exposed: takes 50%% more damage for %s turns."
 metadata/_custom_type_script = "uid://by2i7cm344o7g"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://12uilatvingd"]
+[gd_scene load_steps=17 format=3 uid="uid://12uilatvingd"]
 
 [ext_resource type="Script" uid="uid://d16w6f4ixp8nf" path="res://enemy/enemy_action_picker.gd" id="1_tpigd"]
 [ext_resource type="Script" uid="uid://l0m31bly6db5" path="res://enemies/witch/witch_attack_action.gd" id="2_18260"]
@@ -11,23 +11,30 @@
 [ext_resource type="Script" uid="uid://cph22o5b1qkbx" path="res://enemies/witch/witch_ready_action.gd" id="9_2a7kw"]
 [ext_resource type="Texture2D" uid="uid://c2xhttrclo1r7" path="res://art/tile_0116.png" id="10_knsyo"]
 [ext_resource type="Script" uid="uid://7sv7ufk8ayjv" path="res://enemies/witch/witch_boom_action.gd" id="11_y2ugi"]
+[ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://art/tile_0118.png" id="12_xw0d7"]
 
 [sub_resource type="Resource" id="Resource_kxwnk"]
 script = ExtResource("4_y2ugi")
-number = "12"
+base_text = "%s"
 icon = ExtResource("3_knsyo")
 metadata/_custom_type_script = "uid://clhy3p41f44cy"
 
 [sub_resource type="Resource" id="Resource_nwka6"]
 script = ExtResource("4_y2ugi")
-number = "15"
+base_text = ""
 icon = ExtResource("7_xw0d7")
 metadata/_custom_type_script = "uid://clhy3p41f44cy"
 
 [sub_resource type="Resource" id="Resource_y2ugi"]
 script = ExtResource("4_y2ugi")
-number = ""
+base_text = ""
 icon = ExtResource("10_knsyo")
+metadata/_custom_type_script = "uid://clhy3p41f44cy"
+
+[sub_resource type="Resource" id="Resource_2a7kw"]
+script = ExtResource("4_y2ugi")
+base_text = "%s"
+icon = ExtResource("12_xw0d7")
 metadata/_custom_type_script = "uid://clhy3p41f44cy"
 
 [node name="WitchEnemyAI" type="Node"]
@@ -50,6 +57,9 @@ chance_weight = 3.0
 [node name="WitchReadyAction" type="Node" parent="."]
 script = ExtResource("9_2a7kw")
 intent = SubResource("Resource_y2ugi")
+type = 1
+chance_weight = 3.0
 
 [node name="WitchBoomAction" type="Node" parent="."]
 script = ExtResource("11_y2ugi")
+intent = SubResource("Resource_2a7kw")

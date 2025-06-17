@@ -7,10 +7,12 @@
 [resource]
 script = ExtResource("2_jwffy")
 id = "warrior_common_1"
+name = ""
 type = 0
 rarity = 1
 target = 1
 cost = 1
+exhausts = false
 icon = ExtResource("1_4sma3")
 tooltip_text = "[center]Uncommon Card.[/center]"
 sound = ExtResource("3_ni2t2")

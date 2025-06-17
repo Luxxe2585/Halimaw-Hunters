@@ -21,13 +21,38 @@ func add_card(card: Card):
 	card_pile_size_changed.emit(cards.size())
 
 
+func remove_card(card: Card):
+	var index := cards.find(card)
+	
+	# Only remove if card exists in the array
+	if index != -1:
+		cards.remove_at(index)
+		card_pile_size_changed.emit(cards.size())
+
+
 func shuffle() -> void:
-	cards.shuffle()
+	RNG.array_shuffle(cards)
 
 
 func clear() -> void:
 	cards.clear()
 	card_pile_size_changed.emit(cards.size())
+
+
+func duplicate_cards() -> Array[Card]:
+	var new_array: Array[Card] = []
+	
+	for card: Card in cards:
+		new_array.append(card.duplicate())
+	
+	return new_array
+
+
+func custom_duplicate() -> CardPile:
+	var new_card_pile := CardPile.new()
+	new_card_pile.cards = duplicate_cards()
+	
+	return new_card_pile
 
 
 func _to_string() -> String:

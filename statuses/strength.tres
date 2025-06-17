@@ -13,5 +13,5 @@ can_be_negative = true
 duration = 2
 stacks = 2
 icon = ExtResource("1_jqcf5")
-tooltip = "TODO"
+tooltip = "Strength: attacks deal %s more damage."
 metadata/_custom_type_script = "uid://by2i7cm344o7g"

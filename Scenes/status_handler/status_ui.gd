@@ -14,7 +14,7 @@ func set_status(new_status: Status) -> void:
 	
 	status = new_status
 	icon.texture = status.icon
-	duration.visible = status.stack_type == Status.StackType.DURATION or Status.StackType.BOTH
+	duration.visible = status.stack_type == Status.StackType.DURATION or status.stack_type == Status.StackType.BOTH
 	stacks.visible = status.stack_type == Status.StackType.INTENSITY
 	custom_minimum_size = icon.size
 	

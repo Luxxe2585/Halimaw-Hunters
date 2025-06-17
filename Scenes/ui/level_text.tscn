@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwth0wndrrgkq"]
+
+[ext_resource type="Script" uid="uid://yo0sfhb4o5fg" path="res://Scenes/ui/level_text.gd" id="1_ohvx2"]
+
+[sub_resource type="Animation" id="Animation_ohvx2"]
+resource_name = "FADE"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.33333, 1.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7ovc0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83fme"]
+_data = {
+&"FADE": SubResource("Animation_ohvx2"),
+&"RESET": SubResource("Animation_7ovc0")
+}
+
+[node name="ActText" type="Container"]
+custom_minimum_size = Vector2(110, 36)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_right = 55.0
+offset_bottom = 36.0
+grow_horizontal = 2
+script = ExtResource("1_ohvx2")
+
+[node name="VBoxContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(110, 36)
+layout_mode = 2
+
+[node name="TitleText" type="RichTextLabel" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 36)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[color=#FFA500]%s[/color]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActTextAnimation" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_83fme")
+}

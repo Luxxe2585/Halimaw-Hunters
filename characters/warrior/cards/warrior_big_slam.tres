@@ -7,11 +7,13 @@
 [resource]
 script = ExtResource("2_jtyte")
 id = "warrior_big_slam"
+name = ""
 type = 0
 rarity = 1
 target = 1
 cost = 2
+exhausts = false
 icon = ExtResource("1_odk1c")
-tooltip_text = "[center]Deal [color=\"ff0000\"]10[/color] damage and apply 2 [color=\"ffdf00\"]Exposed[/color].[/center]"
+tooltip_text = "[center]Deal [color=\"ff0000\"]%s[/color] damage and apply %s [color=\"ffdf00\"]Exposed[/color].[/center]"
 sound = ExtResource("3_0qbpi")
 metadata/_custom_type_script = "uid://dtdtresv3yc0e"

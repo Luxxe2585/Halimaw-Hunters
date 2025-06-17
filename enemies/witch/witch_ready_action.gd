@@ -1,16 +1,17 @@
 extends EnemyAction
 
+@export var block := 25
 
-func is_performable() -> bool:
-	if not enemy or enemy.stats.block != 15:
-		return false
-	
-	return true
 
 
 func perform_action() -> void:
 	if not enemy or not target:
 		return
+	
+	var block_effect := BlockEffect.new()
+	block_effect.amount = block
+	block_effect.sound = sound
+	block_effect.execute([enemy])
 	
 	# Set ready state on enemy stats
 	enemy.stats.is_readied = true
@@ -18,7 +19,5 @@ func perform_action() -> void:
 	get_tree().create_timer(0.6, false).timeout.connect(
 		func():
 			Events.enemy_action_completed.emit(enemy)
-			# Signal that ready state is complete
-			Events.enemy_readied.emit(enemy)
 			)
 			

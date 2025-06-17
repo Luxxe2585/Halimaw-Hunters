@@ -4,14 +4,14 @@ extends Node
 const X_DIST := 30
 const Y_DIST := 25
 const  PLACEMENT_RANDOMNESS := 5
-const FLOORS := 16
+const FLOORS := 12
 const MAP_WIDTH := 7
 const PATHS := 6
 const MONSTER_ROOM_WEIGHT := 3.7
-const ELITE_ROOM_WEIGHT := 1.6
-const EVENT_ROOM_WEIGHT := 3.0
-const CAMPFIRE_ROOM_WEIGHT := 1.2
-const SHOP_ROOM_WEIGHT := 0.5
+const ELITE_ROOM_WEIGHT := 1.3
+const EVENT_ROOM_WEIGHT := 0.0
+const CAMPFIRE_ROOM_WEIGHT := 1.0
+const SHOP_ROOM_WEIGHT := 1.0
 
 @export var battle_stats_pool: BattleStatsPool
 
@@ -158,13 +158,18 @@ func _setup_room_types() -> void:
 			room.type = Room.Type.MONSTER
 			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(0)
 	
-	# 9th floor is always a treasure
-	for room: Room in map_data[8]:
+	# middle floor is always a treasure
+	for room: Room in map_data[6]:
 		if room.next_rooms.size() > 0:
 			room.type = Room.Type.TREASURE
 	
-	# last floor before the boss is always a rest area
-	for room: Room in map_data[14]:
+	# last floor before the boss is always a quiz event
+	for room: Room in map_data[FLOORS - 2]:
+		if room.next_rooms.size() > 0:
+			room.type = Room.Type.EVENT
+	
+	# second last floor before the boss is always a rest area
+	for room: Room in map_data[FLOORS - 3]:
 		if room.next_rooms.size() > 0:
 			room.type = Room.Type.CAMPFIRE
 	
@@ -182,11 +187,12 @@ func _set_room_randomly(room_to_set: Room) -> void:
 	var consecutive_campfire := true
 	var consecutive_shop := true
 	var consecutive_elite := true
-	var campfire_on_14 := true
+	var campfire_below_event_boss := true
+	var shop_below_3 := true
 	
 	var type_candidate: Room.Type
 	
-	while campfire_below_6 or elite_below_6 or consecutive_campfire or consecutive_shop or consecutive_elite or campfire_on_14:
+	while campfire_below_6 or elite_below_6 or consecutive_campfire or consecutive_shop or consecutive_elite or campfire_below_event_boss or shop_below_3:
 		type_candidate = _get_random_room_type_by_weight()
 		
 		var is_campfire := type_candidate == Room.Type.CAMPFIRE
@@ -198,10 +204,11 @@ func _set_room_randomly(room_to_set: Room) -> void:
 		
 		campfire_below_6 = is_campfire and room_to_set.row < 5
 		elite_below_6 = is_elite and room_to_set.row < 5
+		shop_below_3 = is_shop and room_to_set.row < 2
 		consecutive_campfire = is_campfire and has_campfire_parent
 		consecutive_shop = is_shop and has_shop_parent
 		consecutive_elite = is_elite and has_elite_parent
-		campfire_on_14 = is_campfire and room_to_set.row == 13
+		campfire_below_event_boss = is_campfire and room_to_set.row == FLOORS - 2
 
 	room_to_set.type = type_candidate
 	

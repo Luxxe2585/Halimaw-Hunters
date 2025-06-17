@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://8ufcs7hh5smm"]
+[gd_scene load_steps=6 format=3 uid="uid://8ufcs7hh5smm"]
 
 [ext_resource type="Script" uid="uid://cf2f0tfolu3yq" path="res://Scenes/ui/main_menu.gd" id="1_e2dq1"]
+[ext_resource type="Resource" uid="uid://b1td0cjrcotse" path="res://Scenes/run/run_startup.tres" id="2_e23ap"]
 
 [sub_resource type="Gradient" id="Gradient_rhbk3"]
 colors = PackedColorArray(0.446234, 0.268385, 0.00307705, 1, 0.0792166, 0.0638075, 0.0184792, 1)
@@ -22,6 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e2dq1")
+run_startup = ExtResource("2_e23ap")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -90,4 +92,5 @@ text = "Exit
 
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/NewRun" to="." method="_on_new_run_pressed"]
+[connection signal="pressed" from="VBoxContainer/Encyclopedia" to="." method="_on_encyclopedia_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="RelicPool" load_steps=9 format=3 uid="uid://bsqhcifddrqn3"]
+
+[ext_resource type="Script" uid="uid://bwcnlg8xhlicr" path="res://custom_resources/relic.gd" id="1_bhqif"]
+[ext_resource type="Resource" uid="uid://dj0vlynju08nc" path="res://relics/mana_potion.tres" id="2_2q3sk"]
+[ext_resource type="Script" uid="uid://d3ifjt5i7x46i" path="res://custom_resources/relic_pool.gd" id="2_eofjg"]
+[ext_resource type="Resource" uid="uid://coig1ntgr7m8g" path="res://relics/reinforced_armor.tres" id="3_oyyjg"]
+[ext_resource type="Resource" uid="uid://c1dqessjimh3e" path="res://relics/explosive_barrel.tres" id="4_6m7dr"]
+[ext_resource type="Resource" uid="uid://r6aixmaucd4b" path="res://relics/wooden_sword.tres" id="5_yuo2h"]
+[ext_resource type="Resource" uid="uid://b7xh51rkdccfy" path="res://relics/confusing_staff.tres" id="6_agdbx"]
+[ext_resource type="Resource" uid="uid://bkmq76jcysxaf" path="res://relics/blinding_potion.tres" id="7_agdbx"]
+
+[resource]
+script = ExtResource("2_eofjg")
+relics = Array[ExtResource("1_bhqif")]([ExtResource("2_2q3sk"), ExtResource("3_oyyjg"), ExtResource("4_6m7dr"), ExtResource("5_yuo2h"), ExtResource("6_agdbx"), ExtResource("7_agdbx")])
+metadata/_custom_type_script = "uid://d3ifjt5i7x46i"

@@ -1,6 +1,7 @@
 class_name MapRoom
 extends Area2D
 
+signal clicked(room: Room)
 signal selected(room: Room)
 
 const ICONS := {
@@ -48,6 +49,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		return
 
 	room.selected = true
+	clicked.emit(room)
 	animation_player.play("select")
 
 #Called by AnimationPlayer when the "select" animation is over
