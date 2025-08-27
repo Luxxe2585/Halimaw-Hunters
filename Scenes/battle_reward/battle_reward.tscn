@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://tr5xiqmk3tgm"]
 
 [ext_resource type="Script" uid="uid://b04ycjxerpu7g" path="res://Scenes/battle_reward/battle_reward.gd" id="1_vr6yl"]
-[ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="2_ux1gb"]
+[ext_resource type="Texture2D" uid="uid://dimns4x42qmef" path="res://assets/backgrounds/Mangrove.png" id="2_lc4te"]
 [ext_resource type="PackedScene" uid="uid://2isw4psksh8b" path="res://Scenes/ui/reward_button.tscn" id="3_endkn"]
-[ext_resource type="Texture2D" uid="uid://letp8o1jdk3a" path="res://art/gold.png" id="4_lc4te"]
-[ext_resource type="Texture2D" uid="uid://dincpwbgndygq" path="res://art/rarity.png" id="5_lfleq"]
+[ext_resource type="Texture2D" uid="uid://letp8o1jdk3a" path="res://global/art/gold.png" id="4_lc4te"]
+[ext_resource type="Texture2D" uid="uid://dincpwbgndygq" path="res://global/art/rarity.png" id="5_lfleq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_endkn"]
 font_size = 12
@@ -22,13 +22,14 @@ grow_vertical = 2
 script = ExtResource("1_vr6yl")
 
 [node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ux1gb")
+texture = ExtResource("2_lc4te")
 expand_mode = 1
 stretch_mode = 5
 

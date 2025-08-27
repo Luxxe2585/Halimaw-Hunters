@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bg4g6xog352ub"]
+
+[ext_resource type="Texture2D" uid="uid://n03svmlirt0n" path="res://assets/Card Art Kudaman/Crippling Blow_.png" id="1_n15qc"]
+[ext_resource type="Script" uid="uid://cx4c661ro578d" path="res://characters/kudaman/kudaman_crippling_blow_plus.gd" id="2_17taj"]
+[ext_resource type="AudioStream" uid="uid://dgjiat603sr7u" path="res://assets/sfx/rock-break-hard.mp3" id="3_eo6nf"]
+
+[resource]
+script = ExtResource("2_17taj")
+id = "kudaman_crippling_blow_plus"
+name = "Crippling Blow+"
+type = 0
+rarity = 0
+target = 1
+cost = 2
+exhausts = false
+unplayable = false
+ethereal = false
+innate = false
+icon = ExtResource("1_n15qc")
+tooltip_text = "[center]Deal [color=\"ff0000\"]%s[/color] damage and apply 3 [color=\"ffdf00\"]Exposed[/color].
+Exposed - Receive 50%% more damage[/center]"
+sound = ExtResource("3_eo6nf")
+metadata/_custom_type_script = "uid://dtdtresv3yc0e"

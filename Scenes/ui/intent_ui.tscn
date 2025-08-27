@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2nsn024j2m55"]
 
 [ext_resource type="Script" uid="uid://cb7e18jbdvqsv" path="res://Scenes/ui/intent_ui.gd" id="1_0eag1"]
-[ext_resource type="Texture2D" uid="uid://bq4im540nk025" path="res://art/tile_0106.png" id="1_njdp4"]
+[ext_resource type="Texture2D" uid="uid://bb3wlt4j5sarr" path="res://assets/icons/Sword.png" id="2_i1t1r"]
 
 [node name="IntentUI" type="HBoxContainer"]
 anchors_preset = 5
@@ -18,9 +18,9 @@ script = ExtResource("1_0eag1")
 [node name="Icon" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(14, 14)
 layout_mode = 2
-texture = ExtResource("1_njdp4")
+texture = ExtResource("2_i1t1r")
 expand_mode = 1
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2

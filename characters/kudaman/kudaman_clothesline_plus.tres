@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://m1h7ybae5yr"]
+
+[ext_resource type="Texture2D" uid="uid://c4mmsikbqrve5" path="res://assets/Card Art Kudaman/Clothesline_.png" id="1_u6buq"]
+[ext_resource type="Script" uid="uid://bxihr3p4j660" path="res://characters/kudaman/kudaman_clothesline_plus.gd" id="2_hc1t8"]
+[ext_resource type="AudioStream" uid="uid://cgqt6mem7pled" path="res://assets/sfx/whoosh-cinematic.mp3" id="3_iknom"]
+
+[resource]
+script = ExtResource("2_hc1t8")
+id = "kudaman_clothesline_plus"
+name = "Clothesline+"
+type = 0
+rarity = 1
+target = 2
+cost = 2
+exhausts = false
+unplayable = false
+ethereal = false
+innate = false
+icon = ExtResource("1_u6buq")
+tooltip_text = "[center]Deal [color=\"ff0000\"]%s[/color] damage and apply %s [color=\"ffdf00\"]Exposed[/color] to all enemies.
+(Exposed - Receive 50% more damage)[/center]"
+sound = ExtResource("3_iknom")
+metadata/_custom_type_script = "uid://dtdtresv3yc0e"

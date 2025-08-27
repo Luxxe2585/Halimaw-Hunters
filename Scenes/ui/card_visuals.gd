@@ -7,6 +7,7 @@ extends Control
 @onready var cost: Label = $Cost
 @onready var icon: TextureRect = $Icon
 @onready var rarity: TextureRect = $Rarity
+@onready var card_name: Label = $Name
 
 
 func set_card(value: Card) -> void:
@@ -16,4 +17,5 @@ func set_card(value: Card) -> void:
 	card = value
 	cost.text = str(card.cost)
 	icon.texture = card.icon
+	card_name.text = card.name
 	rarity.modulate = Card.RARITY_COLORS[card.rarity]

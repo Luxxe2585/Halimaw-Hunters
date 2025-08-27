@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="DecayCurse" load_steps=2 format=3 uid="uid://4y41gftbemwn"]
+
+[ext_resource type="Script" uid="uid://sqv61sswf43o" path="res://common_cards/curses/decay.gd" id="1_lrpc6"]
+
+[resource]
+script = ExtResource("1_lrpc6")
+id = "decay"
+name = "Decay"
+type = 4
+rarity = 0
+target = 0
+cost = 0
+exhausts = false
+unplayable = true
+ethereal = false
+innate = false
+tooltip_text = "Unplayable. At the end of your turn, take 2 damage."
+metadata/_custom_type_script = "uid://eqed44ocyjqp"

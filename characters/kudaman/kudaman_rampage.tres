@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c7d4cw3vajsaa"]
+
+[ext_resource type="Script" uid="uid://tn56rcyx6nf1" path="res://characters/kudaman/kudaman_rampage.gd" id="1_gpklm"]
+[ext_resource type="Texture2D" uid="uid://bejuhdcdps6lu" path="res://assets/Card Art Kudaman/Rampage_.png" id="1_p86ll"]
+[ext_resource type="AudioStream" uid="uid://byk0c6b333ljr" path="res://assets/sfx/stomp.mp3" id="2_p86ll"]
+
+[resource]
+script = ExtResource("1_gpklm")
+id = "kudaman_rampage"
+name = "Rampage"
+type = 0
+rarity = 1
+target = 1
+cost = 2
+exhausts = false
+unplayable = false
+ethereal = false
+innate = false
+icon = ExtResource("1_p86ll")
+tooltip_text = "[center]Deal [color=\"ff0000\"]%s[/color] damage to all enemies four times.[/center]"
+sound = ExtResource("2_p86ll")
+metadata/_custom_type_script = "uid://dtdtresv3yc0e"

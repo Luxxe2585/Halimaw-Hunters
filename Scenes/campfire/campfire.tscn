@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://du2jyjax4dcmv" path="res://Scenes/campfire/campfire.gd" id="1_hp3ey"]
 [ext_resource type="Resource" uid="uid://cjfb6vtrdtpij" path="res://characters/warrior/warrior.tres" id="2_a38u6"]
-[ext_resource type="Texture2D" uid="uid://dincpwbgndygq" path="res://art/rarity.png" id="3_a38u6"]
-[ext_resource type="Texture2D" uid="uid://dytq0eumwvky6" path="res://art/tile_0074.png" id="4_w1t74"]
+[ext_resource type="Texture2D" uid="uid://dincpwbgndygq" path="res://global/art/rarity.png" id="3_a38u6"]
+[ext_resource type="Texture2D" uid="uid://dytq0eumwvky6" path="res://global/art/tile_0074.png" id="4_w1t74"]
 
 [sub_resource type="Gradient" id="Gradient_a38u6"]
 offsets = PackedFloat32Array(0.333333, 1)
@@ -246,3 +246,4 @@ libraries = {
 }
 
 [connection signal="pressed" from="UILayer/UI/HBoxContainer/RestUI/RestButton" to="." method="_on_rest_button_pressed"]
+[connection signal="pressed" from="UILayer/UI/HBoxContainer/UpgradeUI/UpgradeButton" to="." method="_on_upgrade_button_pressed"]

@@ -5,16 +5,22 @@ enum Type {GOLD, NEW_CARD}
 
 const CARD_REWARDS = preload("res://Scenes/ui/card_rewards.tscn")
 const REWARD_BUTTON = preload("res://Scenes/ui/reward_button.tscn")
-const GOLD_ICON := preload("res://art/gold.png")
+const GOLD_ICON := preload("res://global/art/gold.png")
 const GOLD_TEXT := "%s gold"
-const CARD_ICON := preload("res://art/rarity.png")
+const CARD_ICON := preload("res://global/art/rarity.png")
 const CARD_TEXT := "Add New Card"
 
 @export var run_stats: RunStats
 @export var character_stats: CharacterStats
 @export var relic_handler: RelicHandler
+@export var background_art: CompressedTexture2D:
+	set(value):
+		background_art = value
+		if background:  
+			background.texture = background_art
 
 @onready var rewards: VBoxContainer = %Rewards
+@onready var background: TextureRect = %Background
 
 var card_reward_total_weight := 0.0
 var card_rarity_weights := {
@@ -102,6 +108,8 @@ func _get_random_available_card(available_cards: Array[Card], with_rarity: Card.
 		func(card: Card):
 			return card.rarity == with_rarity
 	)
+	if all_possible_cards.is_empty():
+		return RNG.array_pick_random(available_cards)
 	return RNG.array_pick_random(all_possible_cards)
 
 

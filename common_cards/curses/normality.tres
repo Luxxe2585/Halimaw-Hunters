@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://l13ewid5ot5j"]
+
+[ext_resource type="Script" uid="uid://dqa0s22t18sgt" path="res://common_cards/curses/normality.gd" id="1_1q5kk"]
+
+[resource]
+script = ExtResource("1_1q5kk")
+id = "normality"
+name = "Normality"
+type = 4
+rarity = 0
+target = 0
+cost = 0
+exhausts = false
+unplayable = true
+ethereal = false
+innate = false
+tooltip_text = "Unplayable. You cannot play more than 3 cards this turn."
+metadata/_custom_type_script = "uid://eqed44ocyjqp"

@@ -9,6 +9,16 @@ const TREASURE_SCENE := preload("res://Scenes/treasure/treasure.tscn")
 const EVENT_SCENE := preload("res://Scenes/map_event/map_event.tscn")
 const WIN_SCREEN_SCENE := preload("res://Scenes/win_screen/win_screen.tscn")
 const MAIN_MENU_PATH := "res://Scenes/ui/main_menu.tscn"
+const DECK_SELECTOR = preload("res://Scenes/ui/deck_selector.tscn")
+const EVENT_SYSTEM_SCENE := preload("res://Scenes/events/event_system.gd")
+
+const act1_battle_stats := preload("res://battles/act1_battle_stats_pool.tres")
+const act2_battle_stats := preload("res://battles/act2_battle_stats_pool.tres")
+const act3_battle_stats := preload("res://battles/act3_battle_stats_pool.tres")
+
+const act1_background := preload("res://assets/backgrounds/Forest.png")
+const act2_background := preload("res://assets/backgrounds/Mangrove.png")
+const act3_background := preload("res://assets/backgrounds/Mountains.png")
 
 @export var run_startup: RunStartup
 @export var relic_pool: RelicPool
@@ -22,7 +32,9 @@ const MAIN_MENU_PATH := "res://Scenes/ui/main_menu.tscn"
 @onready var deck_button: CardPileButton = %DeckButton
 @onready var deck_view: CardPileView = %DeckView
 @onready var pause_menu: PauseMenu = $PauseMenu
-@onready var act_text: ActText = $ActText
+@onready var deck_selector: DeckSelector = %DeckSelector
+@onready var event_system: EventSystem = $EventSystem
+#@onready var act_text: ActText = $ActText
 
 @onready var battle_button: Button = %BattleButton
 @onready var campfire_button: Button = %CampfireButton
@@ -35,11 +47,13 @@ const MAIN_MENU_PATH := "res://Scenes/ui/main_menu.tscn"
 var stats: RunStats
 var character: CharacterStats
 var save_data: SaveGame
+var current_battle_source: String = ""
 
 
 func _ready() -> void:
 	if not run_startup:
 		return
+	
 	
 	pause_menu.save_and_quit.connect(
 		func():
@@ -64,6 +78,7 @@ func _start_run() -> void:
 	
 	_setup_event_connections()
 	_setup_top_bar()
+	#map.map_generator.battle_stats_pool = act1_battle_stats
 	map.generate_new_map()
 	map.unlock_floor(0)
 	
@@ -111,17 +126,23 @@ func _load_run() -> void:
 
 
 
-func _show_act_text() -> void:
-	if act_text:
-		act_text.update_act_text(stats.current_level)
-		act_text.play_act_animation()
+#func _show_act_text() -> void:
+#	if act_text:
+#		act_text.update_act_text(stats.current_level)
+#		act_text.play_act_animation()
 
 func _generate_next_level() -> void:
 	#This needs to be edited. Currently works but there's weird pause at the start
 	map.clear_map()
+	stats.current_level += 1
+	#add if statement here that checks current_level and changes the map_generator's
+	#battle_stats_pool to the corresponding act
+	#map.map_generator.battle_stats_pool = act2_battle_stats
+	
+	
 	map.generate_new_map()
 	map.unlock_floor(0)
-	stats.current_level += 1
+	
 	
 	
 	map.camera_2d.position.y = map.initial_camera_position
@@ -131,9 +152,9 @@ func _generate_next_level() -> void:
 		current_view.get_child(0).queue_free()
 	
 	map.show_map()
-	call_deferred("_show_act_text")
 	
 	map.animate_camera_scroll(1.25, 2.25)
+	call_deferred("_show_act_text")
 	
 	_save_run(true)
 
@@ -169,6 +190,16 @@ func _setup_event_connections() -> void:
 	Events.treasure_room_exited.connect(_on_treasure_room_exited)
 	Events.map_event_exited.connect(_show_map)
 	
+	Events.open_deck_selector_remove.connect(
+		func(amount: int):
+			_open_deck_selector(DeckSelector.Mode.REMOVE, amount)
+	)
+	Events.open_deck_selector_upgrade.connect(
+		func(amount: int):
+			_open_deck_selector(DeckSelector.Mode.UPGRADE, amount)
+	)
+	
+	
 	battle_button.pressed.connect(_change_view.bind(BATTLE_SCENE))
 	campfire_button.pressed.connect(_change_view.bind(CAMPFIRE_SCENE))
 	map_button.pressed.connect(_show_map)
@@ -188,7 +219,30 @@ func _setup_top_bar():
 	
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
-	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
+	call_deferred("_connect_deck_button")
+
+
+func _connect_deck_button():
+	if deck_button and deck_view:
+		deck_button.pressed.connect(
+			func():
+				deck_view.show_current_view("Deck")
+		)
+	else:
+		push_error("Deck button or view is missing in Run scene")
+
+
+func _open_deck_selector(mode: DeckSelector.Mode, amount: int) -> void:
+	if not deck_selector:
+		push_error("DeckSelector node is missing in Run")
+		return
+
+	deck_selector.character_stats = character
+	deck_selector.show_in_mode(mode, amount)
+	deck_selector.selection_completed.connect(
+		func(cards: Array[Card]):
+			Events.deck_selector_completed.emit(cards)
+	, CONNECT_ONE_SHOT)
 
 
 func _show_regular_battle_rewards() -> void:
@@ -196,6 +250,10 @@ func _show_regular_battle_rewards() -> void:
 	reward_scene.run_stats = stats
 	reward_scene.character_stats = character
 	reward_scene.relic_handler = relic_handler
+	match stats.current_level:
+		1: reward_scene.background_art = act1_background
+		2: reward_scene.background_art = act2_background
+		3: reward_scene.background_art = act3_background
 	
 	reward_scene.add_gold_reward(map.last_room.battle_stats.roll_gold_reward())
 	reward_scene.add_card_reward()
@@ -225,6 +283,11 @@ func _get_random_relic() -> Relic:
 func _on_battle_room_entered(room: Room) -> void:
 	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
 	battle_scene.char_stats = character
+	battle_scene.background_art = act1_background
+	if stats.current_level == 2:
+		battle_scene.background_art = act2_background
+	if stats.current_level == 3:
+		battle_scene.background_art = act3_background
 	battle_scene.battle_stats = room.battle_stats
 	battle_scene.relics = relic_handler
 	battle_scene.start_battle()
@@ -234,6 +297,11 @@ func _on_treasure_room_entered() -> void:
 	var treasure_scene := _change_view(TREASURE_SCENE) as Treasure
 	treasure_scene.relic_handler = relic_handler
 	treasure_scene.char_stats = character
+	match stats.current_level:
+		1: treasure_scene.background_art = act1_background
+		2: treasure_scene.background_art = act2_background
+		3: treasure_scene.background_art = act3_background
+	
 	treasure_scene.generate_relic()
 
 
@@ -242,6 +310,11 @@ func _on_treasure_room_exited(relic: Relic) -> void:
 	reward_scene.run_stats = stats
 	reward_scene.character_stats = character
 	reward_scene.relic_handler = relic_handler
+	
+	match stats.current_level:
+		1: reward_scene.background_art = act1_background
+		2: reward_scene.background_art = act2_background
+		3: reward_scene.background_art = act3_background
 	
 	var gold_amount := RNG.instance.randi_range(110, 155)
 	
@@ -274,12 +347,22 @@ func _on_battle_won() -> void:
 	else:
 		_show_regular_battle_rewards()
 
+		if current_battle_source in ["monster", "elite"]:
+			Events.battle_reward_exited.disconnect(_show_map)
+			Events.battle_reward_exited.connect(_on_rewards_exited_trigger_event, CONNECT_ONE_SHOT)
+		
+		current_battle_source = ""
+
+func _on_rewards_exited_trigger_event() -> void:
+	event_system.trigger_post_battle_event()
+
 
 func  _on_map_exited(room: Room) -> void:
 	_save_run(false)
 	
 	match room.type:
 		Room.Type.MONSTER:
+			current_battle_source = "monster"
 			_on_battle_room_entered(room)
 		Room.Type.TREASURE:
 			_on_treasure_room_entered()
@@ -287,9 +370,11 @@ func  _on_map_exited(room: Room) -> void:
 			_on_campfire_entered()
 		Room.Type.SHOP:
 			_on_shop_entered()
-		Room.Type.EVENT:
-			_change_view(EVENT_SCENE)
+		Room.Type.QUIZ_EVENT:
+			event_system.trigger_quiz_event_sequence()
 		Room.Type.ELITE:
+			current_battle_source = "elite"
 			_on_battle_room_entered(room)
 		Room.Type.BOSS:
+			current_battle_source = "boss"
 			_on_battle_room_entered(room)

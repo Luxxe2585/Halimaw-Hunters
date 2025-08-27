@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://1umctab4x6s2"]
+
+[ext_resource type="Texture2D" uid="uid://dx2pold6ft1kg" path="res://assets/Card Art Kudaman/Limit Break_.png" id="1_htxer"]
+[ext_resource type="Script" uid="uid://dbx5don38x1rv" path="res://characters/kudaman/kudaman_limit_break.gd" id="1_oniks"]
+[ext_resource type="AudioStream" uid="uid://dbm06eaw4folb" path="res://assets/sfx/glass-breaking.mp3" id="3_mhaob"]
+[ext_resource type="Resource" uid="uid://dhq1pks4wr8nc" path="res://characters/kudaman/kudaman_limit_break_plus.tres" id="4_5d1im"]
+
+[resource]
+script = ExtResource("1_oniks")
+id = "kudaman_limit_break"
+name = "Limit Break"
+type = 1
+rarity = 2
+target = 0
+cost = 2
+exhausts = true
+unplayable = false
+ethereal = false
+innate = false
+icon = ExtResource("1_htxer")
+tooltip_text = "[center] [color=\"0044ff\"]%s[/color] your Strength. Exhaust.
+[/center]"
+sound = ExtResource("3_mhaob")
+upgrade = ExtResource("4_5d1im")
+metadata/_custom_type_script = "uid://dtdtresv3yc0e"

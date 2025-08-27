@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BattleStatsPool" load_steps=3 format=3 uid="uid://cy687h6yiwo3d"]
+
+[ext_resource type="Script" uid="uid://bauc2jrs82bkk" path="res://custom_resources/battle_stats.gd" id="1_i6e65"]
+[ext_resource type="Script" uid="uid://j2tnlp2pq8ol" path="res://custom_resources/battle_stats_pool.gd" id="2_55fgj"]
+
+[resource]
+script = ExtResource("2_55fgj")
+pool = Array[ExtResource("1_i6e65")]([null])
+metadata/_custom_type_script = "uid://j2tnlp2pq8ol"

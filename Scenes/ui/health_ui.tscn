@@ -1,21 +1,24 @@
 [gd_scene load_steps=3 format=3 uid="uid://c4i60iaoqvrjd"]
 
 [ext_resource type="Script" uid="uid://ixcqv567i3f5" path="res://Scenes/ui/health_ui.gd" id="1_gln7p"]
-[ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://art/heart.png" id="1_pa8dr"]
+[ext_resource type="Texture2D" uid="uid://bcxclpec62csy" path="res://assets/icons/Heart.png" id="2_gln7p"]
 
 [node name="HealthUI" type="HBoxContainer"]
 theme_override_constants/separation = 2
 script = ExtResource("1_gln7p")
 
 [node name="HealthImage" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(6, 6)
 layout_mode = 2
-texture = ExtResource("1_pa8dr")
+texture = ExtResource("2_gln7p")
+expand_mode = 1
 stretch_mode = 5
 
 [node name="HealthLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_font_sizes/font_size = 5
 text = "6"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -24,6 +27,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_font_sizes/font_size = 5
 text = "/16"
 horizontal_alignment = 1
 vertical_alignment = 1

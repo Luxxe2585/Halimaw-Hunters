@@ -1,17 +1,18 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://dvs771yfdsb3k"]
 
-[ext_resource type="Texture2D" uid="uid://boklhiqs1414d" path="res://art/tile_0115.png" id="1_ifyi4"]
+[ext_resource type="Texture2D" uid="uid://dn0m6bukuenw8" path="res://assets/icons/Betel nut.png" id="1_ifyi4"]
 [ext_resource type="Script" uid="uid://b4suiwuexoncq" path="res://relics/healing_potion.gd" id="2_ifyi4"]
 
 [resource]
 script = ExtResource("2_ifyi4")
 heal_amount = 6
-relic_name = "Healing Potion"
-id = "healing_potion"
+relic_name = "Betel Nut"
+id = "betel_nut"
 type = 3
 character_type = 4
 starter_relic = true
+boss_relic = false
 icon = ExtResource("1_ifyi4")
-tooltip = "[color=\"ffdf00\"]Healing Potion[/color]
+tooltip = "[color=\"ffdf00\"]Betel Nut[/color]
 At the end of combat, heal 6 hp."
 metadata/_custom_type_script = "uid://bwcnlg8xhlicr"

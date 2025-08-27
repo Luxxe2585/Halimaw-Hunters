@@ -41,6 +41,7 @@ func add_status(status: Status) -> void:
 		new_status_ui.status.initialize_status(status_owner)
 		return
 		
+	
 	# If the status is unique and we already have it, return
 	if not status.can_expire and not stackable:
 		return

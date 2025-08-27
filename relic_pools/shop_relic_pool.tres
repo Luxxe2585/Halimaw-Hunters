@@ -12,5 +12,5 @@
 
 [resource]
 script = ExtResource("6_ynlps")
-relics = Array[ExtResource("1_7bosj")]([ExtResource("2_6kwvm"), ExtResource("3_3kt4a"), ExtResource("4_2wd03"), ExtResource("5_1nd0b"), ExtResource("6_3kt4a"), ExtResource("7_2wd03"), ExtResource("8_2wd03")])
+relics = Array[ExtResource("1_7bosj")]([ExtResource("8_2wd03"), ExtResource("7_2wd03"), ExtResource("5_1nd0b"), ExtResource("4_2wd03"), ExtResource("3_3kt4a"), ExtResource("2_6kwvm"), ExtResource("6_3kt4a")])
 metadata/_custom_type_script = "uid://d3ifjt5i7x46i"

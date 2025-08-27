@@ -54,8 +54,7 @@ func play_act_animation() -> void:
 		test_anim.track_insert_key(track_idx, 1.0, Color(1,1,1,1))
 		test_anim.length = 1.0
 		
-		animation_player.play("TEST")
-		print("Playing TEST animation")
+		
 	
 	if animation_player:
 		animation_player.play("FADE")

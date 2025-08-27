@@ -30,6 +30,11 @@ func _ready() -> void:
 	Events.card_aim_ended.connect(_on_card_drag_or_aim_ended)
 	card_state_machine.init(self)
 
+	resized.connect(_on_resized)
+	_on_resized()
+
+func _on_resized() -> void:
+	pivot_offset = Vector2(size.x / 2, size.y)
 
 func _input(_event: InputEvent) -> void:
 	card_state_machine.on_input(_event)
@@ -82,10 +87,17 @@ func _set_card(value: Card) -> void:
 
 
 func _set_playable(value: bool) -> void:
-	playable = value
+	if card and card.unplayable:
+		playable = false
+	else:
+		playable = value
+		
 	if not playable:
 		card_visuals.cost.add_theme_color_override("font_color", Color.RED)
 		card_visuals.icon.modulate = Color(1, 1, 1, 0.5)
+		
+		if card and card.unplayable:
+			card_visuals.cost.text = " "
 	else:
 		card_visuals.cost.remove_theme_color_override("font_color")
 		card_visuals.icon.modulate = Color(1, 1, 1, 1)

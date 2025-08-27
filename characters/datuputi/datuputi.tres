@@ -1,20 +1,22 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=5 format=3 uid="uid://djrlgksvh1exy"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=6 format=3 uid="uid://djrlgksvh1exy"]
 
+[ext_resource type="Texture2D" uid="uid://ninpqehy31dm" path="res://assets/datu.png" id="1_7o3lb"]
 [ext_resource type="Script" uid="uid://cfsaiwghvda2o" path="res://custom_resources/character_stats.gd" id="1_cfjqd"]
-[ext_resource type="Texture2D" uid="uid://bue8imscpldys" path="res://art/tile_0097.png" id="1_scbnm"]
 [ext_resource type="Resource" uid="uid://2evlkv6jthcs" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_r31h8"]
+[ext_resource type="Texture2D" uid="uid://c2ihe7rw3o076" path="res://assets/Datu puti Illustration .png" id="3_7o3lb"]
 [ext_resource type="Resource" uid="uid://6u7ueynrf34c" path="res://characters/warrior/warrior_starting_deck.tres" id="3_fnwsn"]
 
 [resource]
 script = ExtResource("1_cfjqd")
 character_name = "Datu Puti"
-description = "A leader of men 
-and a fierce warrior. 
+description = "A newly arrived Datu from the faraway lands of Borneo.
+Equally skilled a spearman as he is a leader.
+Salakot: Reinforce one Warrior at combat start.
 "
-portrait = ExtResource("1_scbnm")
+portrait = ExtResource("3_7o3lb")
 starting_deck = ExtResource("3_fnwsn")
 draftable_cards = ExtResource("2_r31h8")
 cards_per_turn = 4
 max_mana = 3
 max_health = 32
-art = ExtResource("1_scbnm")
+art = ExtResource("1_7o3lb")

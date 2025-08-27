@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DefenseStatus" load_steps=3 format=3 uid="uid://c5vtjqtrp8860"]
+
+[ext_resource type="Script" uid="uid://cj6ursl8dheul" path="res://statuses/defense.gd" id="1_1q32f"]
+[ext_resource type="Texture2D" uid="uid://dcub3l8fs0x0k" path="res://assets/icons/Blue Shield.png" id="1_23knt"]
+
+[resource]
+script = ExtResource("1_1q32f")
+id = "defense"
+type = 2
+stack_type = 1
+can_expire = false
+can_be_negative = true
+duration = 0
+stacks = 0
+icon = ExtResource("1_23knt")
+tooltip = "Defense: Increase block gained from block cards by %s"
+metadata/_custom_type_script = "uid://by2i7cm344o7g"

@@ -9,18 +9,19 @@ const MAP_WIDTH := 7
 const PATHS := 6
 const MONSTER_ROOM_WEIGHT := 3.7
 const ELITE_ROOM_WEIGHT := 1.3
-const EVENT_ROOM_WEIGHT := 0.0
+const QUIZ_EVENT_ROOM_WEIGHT := 0.0
 const CAMPFIRE_ROOM_WEIGHT := 1.0
 const SHOP_ROOM_WEIGHT := 1.0
 
 @export var battle_stats_pool: BattleStatsPool
+
 
 var random_room_type_weights = {
 	Room.Type.MONSTER: 0.0,
 	Room.Type.CAMPFIRE: 0.0,
 	Room.Type.SHOP: 0.0,
 	Room.Type.ELITE: 0.0,
-	Room.Type.EVENT: 0.0,
+	Room.Type.QUIZ_EVENT: 0.0,
 }
 var random_room_type_total_weight := 0
 var map_data: Array[Array]
@@ -146,9 +147,9 @@ func _setup_random_room_weights() -> void:
 	random_room_type_weights[Room.Type.CAMPFIRE] = MONSTER_ROOM_WEIGHT + CAMPFIRE_ROOM_WEIGHT
 	random_room_type_weights[Room.Type.SHOP] = MONSTER_ROOM_WEIGHT + CAMPFIRE_ROOM_WEIGHT + SHOP_ROOM_WEIGHT
 	random_room_type_weights[Room.Type.ELITE] = MONSTER_ROOM_WEIGHT + CAMPFIRE_ROOM_WEIGHT + SHOP_ROOM_WEIGHT + ELITE_ROOM_WEIGHT
-	random_room_type_weights[Room.Type.EVENT] = MONSTER_ROOM_WEIGHT + CAMPFIRE_ROOM_WEIGHT + SHOP_ROOM_WEIGHT + ELITE_ROOM_WEIGHT + EVENT_ROOM_WEIGHT
+	random_room_type_weights[Room.Type.QUIZ_EVENT] = MONSTER_ROOM_WEIGHT + CAMPFIRE_ROOM_WEIGHT + SHOP_ROOM_WEIGHT + ELITE_ROOM_WEIGHT + QUIZ_EVENT_ROOM_WEIGHT
 	
-	random_room_type_total_weight = random_room_type_weights[Room.Type.EVENT]
+	random_room_type_total_weight = random_room_type_weights[Room.Type.QUIZ_EVENT]
 
 
 func _setup_room_types() -> void:
@@ -166,7 +167,7 @@ func _setup_room_types() -> void:
 	# last floor before the boss is always a quiz event
 	for room: Room in map_data[FLOORS - 2]:
 		if room.next_rooms.size() > 0:
-			room.type = Room.Type.EVENT
+			room.type = Room.Type.QUIZ_EVENT
 	
 	# second last floor before the boss is always a rest area
 	for room: Room in map_data[FLOORS - 3]:

@@ -29,10 +29,7 @@ func reset_mana() -> void:
 
 
 func take_damage(damage: int) -> void:
-	var initial_health := health
 	super.take_damage(damage)
-	if initial_health > health:
-		Events.player_health_loss.emit()
 
 
 func can_play_card(card: Card) -> bool:

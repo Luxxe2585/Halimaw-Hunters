@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bu5sns821u2fw"]
+
+[ext_resource type="Script" uid="uid://be22g66dchi0r" path="res://statuses/intuition.gd" id="1_2syp7"]
+[ext_resource type="Texture2D" uid="uid://d78hwcappyss" path="res://assets/icons/Intuition_.png" id="1_jwq5n"]
+
+[resource]
+script = ExtResource("1_2syp7")
+id = "intuition"
+type = 2
+stack_type = 1
+can_expire = false
+can_be_negative = false
+duration = 0
+stacks = 1
+icon = ExtResource("1_jwq5n")
+tooltip = "Negates the next %s times you would lose health."
+metadata/_custom_type_script = "uid://by2i7cm344o7g"

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://csu6fw0hh7pyd"]
+
+[ext_resource type="Script" uid="uid://dhsfiwd5ohddn" path="res://characters/kudaman/kudaman_life_drain.gd" id="1_usa00"]
+[ext_resource type="Texture2D" uid="uid://blatywm4a4bri" path="res://assets/Card Art Kudaman/Life Drain_.png" id="1_wj7th"]
+[ext_resource type="AudioStream" uid="uid://cp3wgsv1wls61" path="res://assets/sfx/soul-steal.mp3" id="3_522mm"]
+[ext_resource type="Resource" uid="uid://3lraj0s3p2g4" path="res://characters/kudaman/kudaman_life_drain_plus.tres" id="4_jmvsb"]
+
+[resource]
+script = ExtResource("1_usa00")
+id = "kudaman_life_drain"
+name = "Life Drain"
+type = 0
+rarity = 1
+target = 1
+cost = 3
+exhausts = false
+unplayable = false
+ethereal = false
+innate = false
+icon = ExtResource("1_wj7th")
+tooltip_text = "[center]Deal [color=\"ff0000\"]%s[/color] damage. Heal [color=\"00ff00\"]%s[/color] health.[/center]"
+sound = ExtResource("3_522mm")
+upgrade = ExtResource("4_jmvsb")
+metadata/_custom_type_script = "uid://dtdtresv3yc0e"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="RegenStatus" load_steps=3 format=3 uid="uid://nhtbmiuno542"]
+
+[ext_resource type="Script" uid="uid://i3sfr7ulj3hl" path="res://statuses/regen.gd" id="1_py7q4"]
+[ext_resource type="Texture2D" uid="uid://cook3a6o4sc4q" path="res://assets/icons/Regen Sparkles.png" id="1_ypk3y"]
+
+[resource]
+script = ExtResource("1_py7q4")
+id = "regen"
+type = 0
+stack_type = 2
+can_expire = true
+can_be_negative = false
+duration = 1
+stacks = 0
+icon = ExtResource("1_ypk3y")
+tooltip = "Heal %s health at the start of your turn. Heals 1 less each turn."
+metadata/_custom_type_script = "uid://by2i7cm344o7g"

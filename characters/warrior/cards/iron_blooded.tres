@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bgde6c5pllq17"]
+
+[ext_resource type="Script" uid="uid://238fc5it34sa" path="res://characters/warrior/cards/iron_blooded.gd" id="1_46xhm"]
+
+[resource]
+script = ExtResource("1_46xhm")
+id = ""
+name = ""
+type = 0
+rarity = 0
+target = 0
+cost = 0
+exhausts = false
+unplayable = false
+ethereal = false
+innate = false
+tooltip_text = "Halve your Regen stacks to gain Block equal to your Regen."
+metadata/_custom_type_script = "uid://dtdtresv3yc0e"

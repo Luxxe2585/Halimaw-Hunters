@@ -5,11 +5,13 @@ extends Node2D
 @export var char_stats: CharacterStats
 @export var music: AudioStream
 @export var relics: RelicHandler
+@export var background_art: CompressedTexture2D
 
 @onready var battle_ui: BattleUI = $BattleUI
 @onready var player_handler: PlayerHandler = $PlayerHandler
 @onready var enemy_handler: EnemyHandler = $EnemyHandler
 @onready var player: Player = $Player
+@onready var background: Sprite2D = %Background
 
 
 func _ready() -> void:
@@ -24,7 +26,7 @@ func _ready() -> void:
 func start_battle() -> void:
 	get_tree().paused = false
 	MusicPlayer.play(music, true)
-	
+	background.texture = background_art
 	battle_ui.char_stats = char_stats
 	player.stats = char_stats
 	player_handler.relics = relics
@@ -47,7 +49,7 @@ func _on_enemy_turn_ended() -> void:
 func _on_player_died() -> void:
 	Events.battle_over_screen_requested.emit("Game Over!", BattleOverPanel.Type.LOSE)
 	SaveGame.delete_data()
-	music = load("res://art/failure.mp3")
+	music = load("res://global/art/failure.mp3")
 	MusicPlayer.play(music, true)
 
 
@@ -58,5 +60,5 @@ func _on_relics_activated(type: Relic.Type) -> void:
 			battle_ui.initialize_card_pile_ui()
 		Relic.Type.END_OF_COMBAT:
 			Events.battle_over_screen_requested.emit("Victorious!", BattleOverPanel.Type.WIN)
-			music = load("res://art/victory.mp3")
+			music = load("res://global/art/victory.mp3")
 			MusicPlayer.play(music, true)

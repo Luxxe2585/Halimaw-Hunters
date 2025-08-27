@@ -27,11 +27,12 @@ func on_gui_input(event: InputEvent) -> void:
 func on_mouse_entered() -> void:
 	mouse_over_card = true
 	
+	card_ui.request_tooltip()
+	
 	if not card_ui.playable or card_ui.disabled:
 		return
 
 	card_ui.card_visuals.panel.set("theme_override_styles/panel", card_ui.HOVER_STYLEBOX)
-	card_ui.request_tooltip()
 
 
 func on_mouse_exited() -> void:

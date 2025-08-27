@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bkc7ryjr5j37w"]
+
+[ext_resource type="Texture2D" uid="uid://d1j6x0q7dnleb" path="res://assets/Card Art Kudaman/Minor Recovery_.png" id="1_rpk87"]
+[ext_resource type="Script" uid="uid://2aullo1prw0m" path="res://characters/kudaman/kudaman_minor_recovery_plus.gd" id="2_rpk87"]
+[ext_resource type="AudioStream" uid="uid://4vc7n8kcr027" path="res://assets/sfx/healpop.mp3" id="3_1u5a5"]
+
+[resource]
+script = ExtResource("2_rpk87")
+id = "minor_recovery_plus"
+name = "Minor Recovery+"
+type = 1
+rarity = 1
+target = 0
+cost = 0
+exhausts = false
+unplayable = false
+ethereal = false
+innate = false
+icon = ExtResource("1_rpk87")
+tooltip_text = "[center]Draw 1 card and gain %s [color=\"00ff00\"]Regen[/color].
+[color=\"00ff00\"]Regen[/color] - heal at the end of turn equal to the number of stacks. Loses 1 stack per turn[/center]"
+sound = ExtResource("3_1u5a5")
+metadata/_custom_type_script = "uid://dtdtresv3yc0e"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="RegretCurse" load_steps=2 format=3 uid="uid://drxxwlgat8vvs"]
+
+[ext_resource type="Script" uid="uid://ba321gc3sxrgk" path="res://common_cards/curses/regret.gd" id="1_5mhtn"]
+
+[resource]
+script = ExtResource("1_5mhtn")
+id = "regret"
+name = "Regret"
+type = 4
+rarity = 0
+target = 0
+cost = 0
+exhausts = false
+unplayable = true
+ethereal = false
+innate = false
+tooltip_text = "Unplayable. At the end of your turn, lose 1 HP for each card in your hand."
+metadata/_custom_type_script = "uid://eqed44ocyjqp"

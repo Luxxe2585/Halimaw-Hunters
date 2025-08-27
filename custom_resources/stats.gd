@@ -21,12 +21,20 @@ func set_block(value: int) -> void:
 
 
 func take_damage(damage: int) -> void:
-	if damage <=0:
+	if damage <= 0:
 		return
-	var intitial_damage = damage
+		
+	var initial_health = health
+	var initial_damage = damage
+	
+	# Calculate damage to block and health
 	damage = clampi(damage - block, 0, damage)
-	block = clampi(block - intitial_damage, 0, block)
+	block = clampi(block - initial_damage, 0, block)
 	health -= damage
+	
+	# Emit health loss signal only if health actually decreased
+	if initial_health > health:
+		Events.player_health_loss.emit()
 
 
 func heal(amount: int) -> void:

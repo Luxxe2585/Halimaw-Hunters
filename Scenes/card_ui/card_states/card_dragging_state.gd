@@ -33,7 +33,7 @@ func on_input(event: InputEvent) -> void:
 		return
 	
 	if mouse_motion:
-		card_ui.global_position = card_ui.get_global_mouse_position() - card_ui.pivot_offset
+		card_ui.global_position = card_ui.get_global_mouse_position()
 	
 	if cancel:
 		transition_requested.emit(self, CardState.State.BASE)

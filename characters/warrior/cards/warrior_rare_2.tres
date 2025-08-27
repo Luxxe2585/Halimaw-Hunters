@@ -1,17 +1,20 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://dnyu54ag1gknv"]
 
-[ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://art/tile_0118.png" id="1_cgfre"]
+[ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://global/art/tile_0118.png" id="1_cgfre"]
 [ext_resource type="Script" uid="uid://5cb5b6ls3x0i" path="res://characters/warrior/cards/warrior_rare_2.gd" id="2_qlsph"]
 
 [resource]
 script = ExtResource("2_qlsph")
 id = "warrior_rare_2"
-name = ""
+name = "Rare 2"
 type = 0
 rarity = 2
 target = 1
 cost = 3
 exhausts = false
+unplayable = false
+ethereal = false
+innate = false
 icon = ExtResource("1_cgfre")
 tooltip_text = "[center]Deal [color=\"ff0000\"]%s[/color] damage.[/center]"
 metadata/_custom_type_script = "uid://dtdtresv3yc0e"

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://dj0vlynju08nc"]
 
-[ext_resource type="Texture2D" uid="uid://c2xhttrclo1r7" path="res://art/tile_0116.png" id="1_nckqy"]
+[ext_resource type="Texture2D" uid="uid://c2xhttrclo1r7" path="res://global/art/tile_0116.png" id="1_nckqy"]
 [ext_resource type="Script" uid="uid://cx7tvfwu30mbx" path="res://relics/mana_potion.gd" id="2_5p4gi"]
 
 [resource]
@@ -10,7 +10,8 @@ id = "mana_potion"
 type = 1
 character_type = 0
 starter_relic = false
+boss_relic = false
 icon = ExtResource("1_nckqy")
 tooltip = "[color=\"ffdf00\"]Mana Potion[/color]
-At the start of combat,gain 1 mana."
+At the start of combat, gain 1 mana."
 metadata/_custom_type_script = "uid://bwcnlg8xhlicr"

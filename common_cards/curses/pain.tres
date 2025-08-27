@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cs7vtpc5wg2of"]
+
+[ext_resource type="Script" uid="uid://c7kvvtyoc1ig4" path="res://common_cards/curses/pain.gd" id="1_yn026"]
+
+[resource]
+script = ExtResource("1_yn026")
+id = "pain"
+name = "Pain"
+type = 4
+rarity = 0
+target = 0
+cost = 0
+exhausts = false
+unplayable = true
+ethereal = false
+innate = false
+tooltip_text = "Unplayable. While in hand, lose 1 HP when other cards are played."
+metadata/_custom_type_script = "uid://eqed44ocyjqp"

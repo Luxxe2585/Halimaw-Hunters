@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://d0b7aa31jdru4" path="res://Scenes/ui/card_menu_ui.tscn" id="1_ajtdi"]
 [ext_resource type="PackedScene" uid="uid://bd2kwrjhru20s" path="res://Scenes/ui/card_tooltip_popup.tscn" id="2_2vheq"]
 [ext_resource type="Script" uid="uid://dtdtresv3yc0e" path="res://custom_resources/card.gd" id="2_eb8os"]
-[ext_resource type="Resource" uid="uid://cg3ydmig1j6sd" path="res://characters/warrior/cards/warrior_true_strength.tres" id="3_41wbt"]
+[ext_resource type="Resource" uid="uid://cg3ydmig1j6sd" path="res://characters/kudaman/kudaman_fury.tres" id="3_41wbt"]
 [ext_resource type="Resource" uid="uid://dnyu54ag1gknv" path="res://characters/warrior/cards/warrior_rare_2.tres" id="4_7hb2g"]
-[ext_resource type="Resource" uid="uid://dps888r8j8jf3" path="res://characters/warrior/cards/warrior_big_slam.tres" id="5_o2i3c"]
+[ext_resource type="Resource" uid="uid://dps888r8j8jf3" path="res://characters/kudaman/kudaman_crippling_blow.tres" id="5_o2i3c"]
 
 [node name="CardRewards" type="ColorRect"]
 anchors_preset = 15
@@ -67,9 +67,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
+offset_left = -25.0
 offset_top = -40.0
-offset_right = 30.0
+offset_right = 25.0
 offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 0

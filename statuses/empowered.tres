@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EmpoweredStatus" load_steps=3 format=3 uid="uid://c7gy18k54tcbb"]
+
+[ext_resource type="Texture2D" uid="uid://co4yhm3c34obm" path="res://assets/icons/Flaming Heart (Thrill).png" id="1_bp4s2"]
+[ext_resource type="Script" uid="uid://kivkdv1a3eoh" path="res://statuses/empowered.gd" id="2_ies5f"]
+
+[resource]
+script = ExtResource("2_ies5f")
+id = "empowered"
+type = 2
+stack_type = 1
+can_expire = true
+can_be_negative = false
+duration = 0
+stacks = 0
+icon = ExtResource("1_bp4s2")
+tooltip = "Empowered: Increases damage done by the next %s attacks by 50%%."
+metadata/_custom_type_script = "uid://by2i7cm344o7g"

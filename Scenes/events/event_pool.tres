@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameEventPool" load_steps=4 format=3 uid="uid://cvm0olcxies0w"]
+
+[ext_resource type="Script" uid="uid://c41m5gaawsyxn" path="res://custom_resources/game_event.gd" id="1_8ws15"]
+[ext_resource type="Script" uid="uid://dtjcht7on13vn" path="res://custom_resources/game_event_pool.gd" id="2_cwr21"]
+[ext_resource type="Resource" uid="uid://be0soa10tmdvf" path="res://Scenes/events/event_resources/shaman_event.tres" id="2_skp5p"]
+
+[resource]
+script = ExtResource("2_cwr21")
+events = Array[ExtResource("1_8ws15")]([ExtResource("2_skp5p")])
+metadata/_custom_type_script = "uid://dtjcht7on13vn"

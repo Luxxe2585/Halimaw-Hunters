@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://vld6gf48k5cy"]
 
-[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://art/tile_0087.png" id="1_5sgxj"]
 [ext_resource type="Script" uid="uid://byvrlgviqs2" path="res://Scenes/player/player.gd" id="1_mpkdy"]
 [ext_resource type="PackedScene" uid="uid://djvksvihqwgwq" path="res://Scenes/ui/stats_ui.tscn" id="2_4atqp"]
+[ext_resource type="Texture2D" uid="uid://ctqhi5f8ouqci" path="res://assets/Kuda.png" id="2_6upyo"]
 [ext_resource type="PackedScene" uid="uid://ub0sc5lnr5il" path="res://Scenes/status_handler/status_handler.tscn" id="4_e41v5"]
 [ext_resource type="PackedScene" uid="uid://cjynvbt1f00sr" path="res://Scenes/modifier_handler/modifier_handler.tscn" id="5_6upyo"]
 [ext_resource type="PackedScene" uid="uid://dsuol6af734df" path="res://Scenes/modifier_handler/modifier.tscn" id="6_xxarj"]
@@ -11,17 +11,19 @@
 script = ExtResource("1_mpkdy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5sgxj")
+position = Vector2(0, -9.53674e-07)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_6upyo")
 
 [node name="StatsUI" parent="." instance=ExtResource("2_4atqp")]
-offset_top = 6.0
-offset_bottom = 22.0
+offset_top = 21.0
+offset_bottom = 37.0
 
 [node name="StatusHandler" parent="." node_paths=PackedStringArray("status_owner") instance=ExtResource("4_e41v5")]
 offset_left = -20.0
-offset_top = 23.0
+offset_top = 31.0
 offset_right = -20.0
-offset_bottom = 23.0
+offset_bottom = 31.0
 status_owner = NodePath("..")
 
 [node name="ModifierHandler" parent="." instance=ExtResource("5_6upyo")]

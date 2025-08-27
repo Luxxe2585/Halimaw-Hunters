@@ -1,3 +1,42 @@
+To do before pre oral:
+Fix card jumping
+Test All might and Iron Blooded 
+Finish implementing events and quiz events
+Implement event array and code for quiz event
+Translate cards into game assets
+Translate relics into game assets
+Create onboarding and profile system
+Update save system to account for profiles (current_run bool)
+Create encyclopedia scene
+Create encounter pools for each act
+Change code for assigning boss icons
+Change art style and fonts
+Add map legend
+Create card template art
+Update card art and text
+Create tooltips for card effects (block, poison, regen, etc)
+Create event template code
+Fix the bug that freezes screen
+Fix animation text so it follows the camera at map generation
+Create intro animation scene as root node
+Create at least 30 events and 30 monster battlestats
+Create at least 20 cards per character
+Create starting relics and 3 other relics per character
+Add artifact and doubletap statuses
+Create at least 5 extra generic relics and adapt old relics to fit with lore
+Make game design document and update thesis doc for new format
+Create story sections before after every boss fight (event style, before every boss fight show a description of the boss and a pic of
+a village under siege by monsters
+1st act: a (specific tribe tbd) fisherman thanks you for saving their village and tells you that he saw Labaw Donggon's fight -- 
+with Saragnayan, reveals he's immortal
+2nd act: a shaman (tribe tbd) reveals that Saragnayan is immortal because he stored his heart in a divine boar and that it needs --
+to be hunted before he can be killed
+3rd act: a tribe (tbd) of hunters helps you trap and kill the boar, you feast on the beast together and are served the heart
+Create tutorial
+Create the Encyclopedia scenes
+Have the WIN SCREEN transition to switch to Saragnayan story scene and fight instead
+Create credits scene
+_________________________
 Test resolutions to see which ones are best for card visual overhaul
 Implement QuizEvent, make an array that keeps track of the id of all events triggered by the player in a run
 then match it with the id of the events that will quiz about those specific events

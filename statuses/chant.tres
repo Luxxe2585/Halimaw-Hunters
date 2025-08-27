@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://crx56ev4h4iqy"]
+
+[ext_resource type="Script" uid="uid://braiw1xkxv580" path="res://statuses/chant.gd" id="1_wpqa7"]
+
+[resource]
+script = ExtResource("1_wpqa7")
+id = "chant"
+type = 0
+stack_type = 2
+can_expire = true
+can_be_negative = false
+duration = 0
+stacks = 0
+tooltip = "Chant: Reduce energy gained by 1 for %s turns"
+metadata/_custom_type_script = "uid://by2i7cm344o7g"

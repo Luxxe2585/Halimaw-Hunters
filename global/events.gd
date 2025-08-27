@@ -54,3 +54,10 @@ signal map_event_exited
 
 # Relic-related events
 signal relic_tooltip_requested(relic: Relic)
+
+# Deck Selector Events
+signal open_deck_selector_remove(amount: int)
+signal open_deck_selector_upgrade(amount: int)
+signal deck_selector_completed(selected_cards: Array[Card])
+signal deck_selector_exited
+signal shop_card_removed

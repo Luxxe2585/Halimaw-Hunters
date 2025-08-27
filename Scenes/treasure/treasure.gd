@@ -4,10 +4,16 @@ extends Control
 @export var relic_pool: RelicPool
 @export var relic_handler: RelicHandler
 @export var char_stats: CharacterStats
+@export var background_art: CompressedTexture2D:
+	set(value):
+		background_art = value
+		if background:  
+			background.texture = background_art
+
 
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var background: TextureRect = %Background
 var found_relic: Relic
-
 
 func generate_relic() -> void:
 	if not relic_pool:

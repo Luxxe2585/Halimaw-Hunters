@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dkb23esns6un2"]
 
 [ext_resource type="Script" uid="uid://b81hkc06w11gu" path="res://Scenes/ui/gold_ui.gd" id="1_pm1rd"]
-[ext_resource type="Texture2D" uid="uid://letp8o1jdk3a" path="res://art/gold.png" id="1_s1ypy"]
+[ext_resource type="Texture2D" uid="uid://c2hohaxr5u06" path="res://assets/icons/Gold Coin.png" id="2_pm1rd"]
 
 [node name="GoldUI" type="HBoxContainer"]
 offset_right = 32.0
@@ -13,12 +13,13 @@ script = ExtResource("1_pm1rd")
 [node name="Icon" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(8, 8)
 layout_mode = 2
-texture = ExtResource("1_s1ypy")
+texture = ExtResource("2_pm1rd")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_font_sizes/font_size = 7
 text = "9999"
 vertical_alignment = 1

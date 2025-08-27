@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8nwlxqcw2jel"]
 
-[ext_resource type="Texture2D" uid="uid://kea63sbj461h" path="res://art/draw.png" id="1_v1ik3"]
+[ext_resource type="Texture2D" uid="uid://kea63sbj461h" path="res://global/art/draw.png" id="1_v1ik3"]
 [ext_resource type="Script" uid="uid://b7fui8phajrg7" path="res://Scenes/ui/card_pile_button.gd" id="2_65n8w"]
 
 [node name="CardPileButton" type="TextureButton"]

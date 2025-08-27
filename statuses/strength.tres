@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StrengthStatus" load_steps=3 format=3 uid="uid://dlbfpsoi24o5d"]
 
-[ext_resource type="Texture2D" uid="uid://bnu6jb6fcx4rx" path="res://art/muscle.png" id="1_jqcf5"]
+[ext_resource type="Texture2D" uid="uid://c171nfocjjfmy" path="res://assets/icons/Flexed Bicep.png" id="1_jqcf5"]
 [ext_resource type="Script" uid="uid://d2lswbfmrkb3c" path="res://statuses/strength.gd" id="2_jqcf5"]
 
 [resource]

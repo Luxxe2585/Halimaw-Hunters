@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="GiantStatus" load_steps=3 format=3 uid="uid://bbor2tr8n8xfr"]
+
+[ext_resource type="Texture2D" uid="uid://deuq7u2um62rq" path="res://assets/icons/Enlarge.png" id="1_4fk05"]
+[ext_resource type="Script" uid="uid://dci7b150to7mg" path="res://statuses/giant.gd" id="2_7gujc"]
+
+[resource]
+script = ExtResource("2_7gujc")
+id = "giant"
+type = 2
+stack_type = 2
+can_expire = false
+can_be_negative = false
+duration = 0
+stacks = 0
+stacks_per_turn = 0
+icon = ExtResource("1_4fk05")
+tooltip = "Doubles damage dealt by your next %s attacks"
+metadata/_custom_type_script = "uid://by2i7cm344o7g"

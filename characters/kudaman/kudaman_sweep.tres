@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://i8urcy5t3s7v"]
+
+[ext_resource type="Texture2D" uid="uid://dlv662m27vlo1" path="res://assets/Card Art Kudaman/Sweep.png" id="1_ygyk7"]
+[ext_resource type="Script" uid="uid://nq5052bpx7t3" path="res://characters/kudaman/kudaman_sweep.gd" id="2_ygyk7"]
+[ext_resource type="AudioStream" uid="uid://cgqt6mem7pled" path="res://assets/sfx/whoosh-cinematic.mp3" id="3_3koa6"]
+[ext_resource type="Resource" uid="uid://5jl4mx2u3ewx" path="res://characters/kudaman/kudaman_sweep_plus.tres" id="4_3koa6"]
+
+[resource]
+script = ExtResource("2_ygyk7")
+id = "kudaman_sweep"
+name = "Sweep"
+type = 0
+rarity = 0
+target = 2
+cost = 3
+exhausts = false
+unplayable = false
+ethereal = false
+innate = false
+icon = ExtResource("1_ygyk7")
+tooltip_text = "[center]Deal [color=\"ff0000\"]%s[/color] damage to all enemies twice.[/center]"
+sound = ExtResource("3_3koa6")
+upgrade = ExtResource("4_3koa6")

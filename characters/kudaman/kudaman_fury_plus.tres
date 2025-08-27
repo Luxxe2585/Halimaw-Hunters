@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://b0y4y7lajeqvk"]
+
+[ext_resource type="Texture2D" uid="uid://rfqp57b4ckyl" path="res://assets/Card Art Kudaman/Shaman_s Fury_.png" id="1_hysve"]
+[ext_resource type="Script" uid="uid://crjlv36arbeag" path="res://characters/kudaman/kudaman_fury_plus.gd" id="2_37ggk"]
+[ext_resource type="AudioStream" uid="uid://dmm34djviyoty" path="res://assets/sfx/dinosaur-roar.mp3" id="3_rk1mj"]
+
+[resource]
+script = ExtResource("2_37ggk")
+id = "kudaman_fury_plus"
+name = "Shaman's Fury+"
+type = 2
+rarity = 2
+target = 0
+cost = 1
+exhausts = false
+unplayable = false
+ethereal = false
+innate = false
+icon = ExtResource("1_hysve")
+tooltip_text = "[center]Gain 3 [color=\"ffdf00\"]Fury[/color]. Fury - At the start of your turn, gain [color=\"ffdf00\"]Strength[/color].[/center]"
+sound = ExtResource("3_rk1mj")
+metadata/_custom_type_script = "uid://dtdtresv3yc0e"

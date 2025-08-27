@@ -1,7 +1,7 @@
 class_name Player
 extends Node2D
 
-const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
+const WHITE_SPRITE_MATERIAL := preload("res://global/art/white_sprite_material.tres")
 
 @export var stats: CharacterStats : set = set_character_stats
 
@@ -38,12 +38,40 @@ func update_stats() -> void:
 	stats_ui.update_stats(stats)
 
 
+func get_modified_block_gain(base_block: int) -> int:
+	return modifier_handler.get_modified_value(base_block, Modifier.Type.BLOCK_GAINED)
+
+
 func take_damage(damage: int, which_modifier: Modifier.Type) -> void:
 	if stats.health <= 0:
 		return
 	
 	sprite_2d.material = WHITE_SPRITE_MATERIAL
 	var modified_damage := modifier_handler.get_modified_value(damage, which_modifier)
+	
+	var intuition_status = status_handler._get_status("intuition") as IntuitionStatus
+	if intuition_status and intuition_status.should_block_damage(modified_damage, stats.block):
+		# Calculate how much damage would actually hit health
+		var health_damage = max(0, modified_damage - stats.block)
+		
+		if health_damage > 0:
+			# Block the health damage using Intuition
+			intuition_status.block_damage()
+			
+			# Only apply damage to block, not health
+			stats.block = max(0, stats.block - modified_damage)
+			
+			# Show visual effects
+			var tween := create_tween()
+			tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
+			tween.tween_interval(0.17)
+			
+			tween.finished.connect(
+				func():
+					sprite_2d.material = null
+			)
+			return
+	
 	
 	var tween := create_tween()
 	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))

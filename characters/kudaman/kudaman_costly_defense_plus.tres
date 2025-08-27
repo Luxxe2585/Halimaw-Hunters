@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c3cykcuwwfc5j"]
+
+[ext_resource type="Texture2D" uid="uid://e5afh5qvv3n7" path="res://assets/Card Art Kudaman/Costly Defense_.png" id="1_piqoq"]
+[ext_resource type="Script" uid="uid://juyyk81bpl1o" path="res://characters/kudaman/kudaman_costly_defense_plus.gd" id="2_o4beh"]
+[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://global/art/block.ogg" id="3_tfdyq"]
+
+[resource]
+script = ExtResource("2_o4beh")
+id = "kudaman_costly_defense_plus"
+name = "Costly Defense+"
+type = 1
+rarity = 1
+target = 0
+cost = 1
+exhausts = false
+unplayable = false
+ethereal = false
+innate = false
+icon = ExtResource("1_piqoq")
+tooltip_text = "[center]Gain [color=\"0044ff\"]%s[/color] block. [color=\"ffdf00\"]Exhaust[/color] 1 random card.
+(Exhaust - Remove a card from hand. This card cannot be used again this combat.)[/center]"
+sound = ExtResource("3_tfdyq")
+metadata/_custom_type_script = "uid://dtdtresv3yc0e"

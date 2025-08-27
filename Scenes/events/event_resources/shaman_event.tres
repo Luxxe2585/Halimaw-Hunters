@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ShamanEvent" load_steps=3 format=3 uid="uid://be0soa10tmdvf"]
+
+[ext_resource type="Texture2D" uid="uid://dimns4x42qmef" path="res://assets/backgrounds/Mangrove.png" id="1_jp5ru"]
+[ext_resource type="Script" uid="uid://0c2f5pcefu7l" path="res://Scenes/events/event_resources/shaman_event.gd" id="1_mwex0"]
+
+[resource]
+script = ExtResource("1_mwex0")
+event_picture = ExtResource("1_jp5ru")
+event_title = "The Shaman"
+event_text = "You stumble upon a Beljan, a shaman from Palawan, deep in their trance. They open one eye and beckon you forward."
+button1_text = "Ask for Cleansing: Pay 50 gold, Remove a card"
+button1_enabled = true
+button2_text = "Ask for Intercession: Pay 50 Gold, Upgrade a card"
+button2_enabled = true
+button3_text = "Ask for Healing: Heal 20 HP"
+button3_enabled = true
+metadata/_custom_type_script = "uid://c41m5gaawsyxn"

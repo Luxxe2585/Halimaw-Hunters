@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CloakStatus" load_steps=3 format=3 uid="uid://ohqa4483oobt"]
+
+[ext_resource type="Script" uid="uid://u4pe41lt002k" path="res://statuses/cloak.gd" id="1_eatr4"]
+[ext_resource type="Texture2D" uid="uid://j78f25k1nkpq" path="res://assets/icons/Feather Cloak.png" id="1_m65ia"]
+
+[resource]
+script = ExtResource("1_eatr4")
+id = "feather_cloak"
+type = 0
+stack_type = 1
+can_expire = false
+can_be_negative = false
+duration = 0
+stacks = 0
+icon = ExtResource("1_m65ia")
+tooltip = "Cloak: At the start of the turn, gain %s Regen"
+metadata/_custom_type_script = "uid://by2i7cm344o7g"

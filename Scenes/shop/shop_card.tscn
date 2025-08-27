@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d4liscgyr7whn" path="res://Scenes/shop/shop_card.gd" id="1_v2hdy"]
 [ext_resource type="PackedScene" uid="uid://d0b7aa31jdru4" path="res://Scenes/ui/card_menu_ui.tscn" id="1_wl0w6"]
-[ext_resource type="Resource" uid="uid://cg3ydmig1j6sd" path="res://characters/warrior/cards/warrior_true_strength.tres" id="2_hagev"]
-[ext_resource type="Texture2D" uid="uid://letp8o1jdk3a" path="res://art/gold.png" id="2_v2hdy"]
+[ext_resource type="Resource" uid="uid://cg3ydmig1j6sd" path="res://characters/kudaman/kudaman_fury.tres" id="2_hagev"]
+[ext_resource type="Texture2D" uid="uid://letp8o1jdk3a" path="res://global/art/gold.png" id="2_v2hdy"]
 
 [node name="ShopCard" type="VBoxContainer"]
 custom_minimum_size = Vector2(40, 56)

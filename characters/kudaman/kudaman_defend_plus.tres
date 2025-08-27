@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bg0ndgb834qix"]
+
+[ext_resource type="Texture2D" uid="uid://btfu6im23j1l8" path="res://assets/Card Art Kudaman/Defend_.png" id="1_7knjf"]
+[ext_resource type="Script" uid="uid://krgm61an2c3b" path="res://characters/kudaman/kudaman_defend_plus.gd" id="2_7knjf"]
+[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://global/art/block.ogg" id="3_1a2r6"]
+
+[resource]
+script = ExtResource("2_7knjf")
+id = "kudaman_defend_plus"
+name = "Defend+"
+type = 1
+rarity = 0
+target = 0
+cost = 1
+exhausts = false
+unplayable = false
+ethereal = false
+innate = false
+icon = ExtResource("1_7knjf")
+tooltip_text = "[center]Gain [color=\"0044ff\"]%s[/color] Block.[/center]"
+sound = ExtResource("3_1a2r6")

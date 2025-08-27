@@ -4,9 +4,9 @@
 
 [node name="StatusHandler" type="GridContainer"]
 mouse_filter = 0
-theme_override_constants/h_separation = 0
+theme_override_constants/h_separation = 1
 theme_override_constants/v_separation = 0
-columns = 6
+columns = 12
 script = ExtResource("1_rp4wc")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

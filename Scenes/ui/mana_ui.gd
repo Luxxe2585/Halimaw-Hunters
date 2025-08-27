@@ -1,5 +1,5 @@
 class_name  ManaUI
-extends Panel
+extends TextureRect
 
 @export var char_stats: CharacterStats : set = _set_char_stats
 

@@ -3,6 +3,7 @@ extends Control
 
 const SHOP_CARD = preload("res://Scenes/shop/shop_card.tscn")
 const SHOP_RELIC = preload("res://Scenes/shop/shop_relic.tscn")
+const DECK_SELECTOR = preload("res://Scenes/ui/deck_selector.tscn")
 
 @export var relic_pool: RelicPool
 @export var char_stats: CharacterStats
@@ -16,6 +17,7 @@ const SHOP_RELIC = preload("res://Scenes/shop/shop_relic.tscn")
 @onready var card_tooltip_popup: CardTooltipPopup = %CardTooltipPopup
 @onready var modifier_handler: ModifierHandler = $ModifierHandler
 @onready var card_remover: Button = %CardRemover
+@onready var removal_cost: Label = %RemoverPrice
 
 
 func _ready() -> void:
@@ -40,6 +42,7 @@ func _input(event: InputEvent) -> void:
 func populate_shop() -> void:
 	_generate_shop_cards()
 	_generate_shop_relics()
+	update_remover()
 
 
 func _blink_timer_setup() -> void:
@@ -91,6 +94,19 @@ func _update_items() -> void:
 	
 	for shop_relic: ShopRelic in relics.get_children():
 		shop_relic.update(run_stats)
+	
+	update_remover()
+
+
+func update_remover() -> void:
+	removal_cost.text = str(run_stats.removal_gold_cost)
+	 
+	if run_stats.gold >= run_stats.removal_gold_cost:
+		removal_cost.remove_theme_color_override("font_color")
+		card_remover.disabled = false
+	else:
+		removal_cost.add_theme_color_override("font_color", Color.RED)
+		card_remover.disabled = true
 
 
 func _update_item_costs() -> void:
@@ -101,6 +117,8 @@ func _update_item_costs() -> void:
 	for shop_relic: ShopRelic in relics.get_children():
 		shop_relic.gold_cost = _get_updated_shop_cost(shop_relic.gold_cost)
 		shop_relic.update(run_stats)
+	
+	update_remover()
 
 
 func _get_updated_shop_cost(original_cost: int) -> int:
@@ -134,10 +152,25 @@ func _on_blink_timer_timeout() -> void:
 	_blink_timer_setup()
 
 
-func _on_card_remover_pressed(card: Card, gold_cost: int) -> void:
-	print("Work in Progress")
-	#char_stats.deck.remove_card(card)
-	#run_stats.gold -= run_stats.removal_gold_cost
-	#run_stats.removal_gold_cost += 25
-	#(need to make a new scene for card removal so we can create an update func)
+func _on_card_remover_pressed() -> void:
+	Events.open_deck_selector_remove.emit(1)
 	
+	Events.deck_selector_completed.connect(
+		_on_shop_removal_completed, 
+		CONNECT_ONE_SHOT
+	)
+
+
+func _on_shop_removal_completed(selected_cards: Array[Card]) -> void:
+	if selected_cards.size() > 0:
+		# Handle shop-specific costs
+		run_stats.gold -= run_stats.removal_gold_cost
+		run_stats.removal_gold_cost += 25
+		
+		# Update shop UI
+		card_remover.text = "Out of Stock"
+		removal_cost.visible = false
+		card_remover.disabled = true
+		
+		# Optionally: Play sound or visual effect
+		Events.shop_card_removed.emit()

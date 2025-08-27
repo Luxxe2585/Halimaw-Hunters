@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="DoubtCurse" load_steps=2 format=3 uid="uid://3cx7w2u78ki0"]
+
+[ext_resource type="Script" uid="uid://ha3tpgp5eo60" path="res://common_cards/curses/doubt.gd" id="1_t0gnu"]
+
+[resource]
+script = ExtResource("1_t0gnu")
+id = "doubt"
+name = "Doubt"
+type = 4
+rarity = 0
+target = 0
+cost = 0
+exhausts = false
+unplayable = true
+ethereal = false
+innate = false
+tooltip_text = "Unplayable. At the end of your turn gain 1 Weak"
+metadata/_custom_type_script = "uid://eqed44ocyjqp"

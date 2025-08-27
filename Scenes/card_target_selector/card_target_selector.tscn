@@ -15,6 +15,7 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("RectangleShape2D_2iiq5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

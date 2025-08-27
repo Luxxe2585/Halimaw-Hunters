@@ -6,13 +6,13 @@ signal selected(room: Room)
 
 const ICONS := {
 	Room.Type.NOT_ASSIGNED: [null, Vector2.ONE],
-	Room.Type.MONSTER: [preload("res://art/tile_0103.png"), Vector2.ONE],
-	Room.Type.TREASURE: [preload("res://art/tile_0089.png"), Vector2.ONE],
-	Room.Type.CAMPFIRE: [preload("res://art/player_heart.png"), Vector2(0.6, 0.6)],
-	Room.Type.SHOP: [preload("res://art/gold.png"), Vector2(0.6, 0.6)],
-	Room.Type.BOSS: [preload("res://art/monster.png"), Vector2(0.1, 0.1)],
-	Room.Type.ELITE: [preload("res://art/tile_0106.png"), Vector2.ONE],
-	Room.Type.EVENT: [preload("res://art/questionmark.png"), Vector2(0.03, 0.03)],
+	Room.Type.MONSTER: [preload("res://assets/icons/(Map) Enemy.png"), Vector2(0.1, 0.1)],
+	Room.Type.TREASURE: [preload("res://assets/icons/(Map) Treasure.png"), Vector2(0.1, 0.1)],
+	Room.Type.CAMPFIRE: [preload("res://assets/icons/(Map) Rest.png"), Vector2(0.1, 0.1)],
+	Room.Type.SHOP: [preload("res://assets/icons/(Map) Merchant.png"), Vector2(0.1, 0.1)],
+	Room.Type.BOSS: [preload("res://assets/icons/Boss Bakunawa Bohol_.png"), Vector2(0.1, 0.1)],
+	Room.Type.ELITE: [preload("res://assets/icons/(Map) Elite.png"), Vector2(0.1, 0.1)],
+	Room.Type.QUIZ_EVENT: [preload("res://assets/icons/(Map) Quiz.png"), Vector2(0.1, 0.1)],
 }
 
 @onready var sprite_2d: Sprite2D = $Visuals/Sprite2D

@@ -10,8 +10,19 @@ extends Control
 
 func _on_rest_button_pressed() -> void:
 	rest_button.disabled = true
+	upgrade_button.disabled = true
 	char_stats.heal(ceili(char_stats.max_health * 0.3))
 	animation_player.play("fade_out")
+
+func _on_upgrade_button_pressed() -> void:
+	Events.deck_selector_completed.connect(
+		func(selected_cards: Array[Card]):
+			rest_button.disabled = true
+			upgrade_button.disabled = true
+			animation_player.play("fade_out")
+	, CONNECT_ONE_SHOT)
+
+	Events.open_deck_selector_upgrade.emit(1)
 
 
 # Called from the AnimationPlayer at "fade-out"

@@ -10,7 +10,7 @@ position = Vector2(166, 65)
 stats = ExtResource("2_m826y")
 
 [node name="Enemy3" parent="." instance=ExtResource("1_ltby6")]
-position = Vector2(201, 75)
+position = Vector2(201, 45)
 stats = ExtResource("2_m826y")
 
 [node name="Enemy2" parent="." instance=ExtResource("1_ltby6")]

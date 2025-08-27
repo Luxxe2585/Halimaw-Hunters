@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SimpleHealEvent" load_steps=3 format=3 uid="uid://3qxg7qu4nr80"]
+
+[ext_resource type="Script" uid="uid://v8jmn0nxnj23" path="res://Scenes/events/event_resources/simple_heal_event.gd" id="1_4vjxq"]
+[ext_resource type="Texture2D" uid="uid://bx3sa75qdlevu" path="res://global/art/nest.PNG" id="1_nmfos"]
+
+[resource]
+script = ExtResource("1_4vjxq")
+event_picture = ExtResource("1_nmfos")
+event_title = "Simple Heal"
+event_text = "Get healed bitch"
+button1_text = "Ok."
+button1_enabled = true
+button2_text = ""
+button2_enabled = false
+button3_text = ""
+button3_enabled = false
+metadata/_custom_type_script = "uid://c41m5gaawsyxn"

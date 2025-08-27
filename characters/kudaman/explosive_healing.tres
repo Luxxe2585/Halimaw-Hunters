@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://bcjt118ahn6ur"]
+
+[ext_resource type="Texture2D" uid="uid://mltvgy2smu54" path="res://assets/Card Art Kudaman/Explosive Healing_.png" id="1_2xkyj"]
+[ext_resource type="Script" uid="uid://ceuvqxt6fqvdu" path="res://characters/kudaman/explosive_healing.gd" id="2_t3srq"]
+[ext_resource type="AudioStream" uid="uid://dnnhmvddv617x" path="res://assets/sfx/medium-explosion.mp3" id="3_cb5vd"]
+[ext_resource type="Resource" uid="uid://bhmchdkm2srlk" path="res://characters/kudaman/explosive_healing_plus.tres" id="4_3tthl"]
+
+[resource]
+script = ExtResource("2_t3srq")
+id = "explosive_healing"
+name = "Explosive Healing"
+type = 0
+rarity = 2
+target = 1
+cost = 1
+exhausts = false
+unplayable = false
+ethereal = false
+innate = false
+icon = ExtResource("1_2xkyj")
+tooltip_text = "Deal damage equal to your [color=\"00ff00\"]Regen[/color]."
+sound = ExtResource("3_cb5vd")
+upgrade = ExtResource("4_3tthl")
+metadata/_custom_type_script = "uid://dtdtresv3yc0e"

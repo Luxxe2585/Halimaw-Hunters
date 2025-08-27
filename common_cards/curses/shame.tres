@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ShameCurse" load_steps=2 format=3 uid="uid://d1sgj2hqtnwnu"]
+
+[ext_resource type="Script" uid="uid://cebbkk7i0mivk" path="res://common_cards/curses/shame.gd" id="1_8hfte"]
+
+[resource]
+script = ExtResource("1_8hfte")
+id = "shame"
+name = "Shame"
+type = 4
+rarity = 0
+target = 0
+cost = 0
+exhausts = false
+unplayable = true
+ethereal = false
+innate = false
+tooltip_text = "Unplayable.
+At the end of your turn, gain 1 Frail."
+metadata/_custom_type_script = "uid://eqed44ocyjqp"

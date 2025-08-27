@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CurseCard" load_steps=3 format=3 uid="uid://y7efgnvoxryn"]
+
+[ext_resource type="Script" uid="uid://eqed44ocyjqp" path="res://custom_resources/curse_card.gd" id="1_71q1c"]
+[ext_resource type="Texture2D" uid="uid://psr6xk3k26oh" path="res://global/art/tile_0114.png" id="1_mlaq7"]
+
+[resource]
+script = ExtResource("1_71q1c")
+id = "clumsy"
+name = "Clumsy"
+type = 4
+rarity = 0
+target = 0
+cost = 0
+exhausts = false
+unplayable = true
+ethereal = true
+innate = false
+icon = ExtResource("1_mlaq7")
+tooltip_text = "Unplayable. Ethereal. 
+Ethereal - Exhausted if in your hand at the end of your turn."
+metadata/_custom_type_script = "uid://eqed44ocyjqp"

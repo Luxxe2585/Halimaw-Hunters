@@ -1,7 +1,7 @@
 class_name Card
 extends Resource
 
-enum Type {ATTACK, SKILL, POWER, STATUS}
+enum Type {ATTACK, SKILL, POWER, STATUS, CURSE}
 enum Rarity {COMMON, UNCOMMON, RARE}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 
@@ -19,12 +19,20 @@ const RARITY_COLORS := {
 @export var target: Target
 @export var cost: int
 @export var exhausts: bool = false
+@export var unplayable: bool = false 
+@export var ethereal: bool = false
+@export var innate: bool = false 
 
 @export_group("Card Visuals")
 @export var icon: Texture
 @export_multiline var tooltip_text: String
 @export var sound: AudioStream
 
+@export_group("Card Upgrade")
+@export var upgrade: Card
+
+
+var is_upgraded: bool = false
 
 func is_single_targeted() -> bool:
 	return target == Target.SINGLE_ENEMY
@@ -48,6 +56,9 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 
 
 func play(targets: Array[Node], char_stats: CharacterStats, modifiers: ModifierHandler) -> void:
+	if unplayable:
+		return
+	
 	Events.card_played.emit(self)
 	char_stats.mana -= cost
 	

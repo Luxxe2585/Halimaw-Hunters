@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Status" load_steps=3 format=3 uid="uid://nuri23fgyq1k"]
+
+[ext_resource type="Script" uid="uid://by2i7cm344o7g" path="res://custom_resources/status.gd" id="1_8demg"]
+[ext_resource type="Texture2D" uid="uid://bd1ce6y08k0q1" path="res://assets/icons/Poisoned Skull.png" id="1_ikvql"]
+
+[resource]
+script = ExtResource("1_8demg")
+id = "poison"
+type = 1
+stack_type = 2
+can_expire = false
+can_be_negative = false
+duration = 1
+stacks = 0
+stacks_per_turn = 0
+icon = ExtResource("1_ikvql")
+tooltip = "Take %s damage at the end of your turn."
+metadata/_custom_type_script = "uid://by2i7cm344o7g"

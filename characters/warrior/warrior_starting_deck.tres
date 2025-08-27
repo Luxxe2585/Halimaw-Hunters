@@ -1,13 +1,22 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=8 format=3 uid="uid://6u7ueynrf34c"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=17 format=3 uid="uid://6u7ueynrf34c"]
 
 [ext_resource type="Script" uid="uid://dtdtresv3yc0e" path="res://custom_resources/card.gd" id="1_e0fcj"]
-[ext_resource type="Resource" uid="uid://clpptd7a8batm" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="2_72uaj"]
 [ext_resource type="Script" uid="uid://c64c61pg3gu04" path="res://custom_resources/card_pile.gd" id="2_bk8hh"]
-[ext_resource type="Resource" uid="uid://i8urcy5t3s7v" path="res://characters/warrior/cards/warrior_slash.tres" id="3_kyiwv"]
-[ext_resource type="Resource" uid="uid://cshsert54jgx1" path="res://characters/warrior/cards/warrior_block.tres" id="3_mxwt3"]
-[ext_resource type="Resource" uid="uid://cg3ydmig1j6sd" path="res://characters/warrior/cards/warrior_true_strength.tres" id="5_7axcj"]
-[ext_resource type="Resource" uid="uid://dps888r8j8jf3" path="res://characters/warrior/cards/warrior_big_slam.tres" id="6_g62ox"]
+[ext_resource type="Resource" uid="uid://cg3ydmig1j6sd" path="res://characters/kudaman/kudaman_fury.tres" id="2_m7ai2"]
+[ext_resource type="Resource" uid="uid://i8urcy5t3s7v" path="res://characters/kudaman/kudaman_sweep.tres" id="5_7ljou"]
+[ext_resource type="Resource" uid="uid://cx481ch8iun0k" path="res://characters/kudaman/kudaman_strike_plus.tres" id="7_85nwi"]
+[ext_resource type="Resource" uid="uid://b0y4y7lajeqvk" path="res://characters/kudaman/kudaman_fury_plus.tres" id="8_1kjuq"]
+[ext_resource type="Resource" uid="uid://kc7oumno0dhp" path="res://characters/kudaman/kudaman_costly_defense.tres" id="8_85nwi"]
+[ext_resource type="Resource" uid="uid://csu6fw0hh7pyd" path="res://characters/kudaman/kudaman_life_drain.tres" id="9_1kjuq"]
+[ext_resource type="Resource" uid="uid://y7efgnvoxryn" path="res://common_cards/curses/clumsy.tres" id="9_7ljou"]
+[ext_resource type="Resource" uid="uid://cqth6o481wa61" path="res://characters/kudaman/kudaman_minor_recovery.tres" id="10_f16q7"]
+[ext_resource type="Resource" uid="uid://c7d4cw3vajsaa" path="res://characters/kudaman/kudaman_rampage.tres" id="11_6na2v"]
+[ext_resource type="Resource" uid="uid://df3sfhu1q5t3j" path="res://characters/kudaman/kudaman_ramping_strike.tres" id="12_0t4d5"]
+[ext_resource type="Resource" uid="uid://5jl4mx2u3ewx" path="res://characters/kudaman/kudaman_sweep_plus.tres" id="12_j5bvy"]
+[ext_resource type="Resource" uid="uid://dsly7oh6ypipy" path="res://characters/warrior/cards/warrior_trickster.tres" id="12_pt3hb"]
+[ext_resource type="Resource" uid="uid://bcjt118ahn6ur" path="res://characters/kudaman/explosive_healing.tres" id="14_f16q7"]
+[ext_resource type="Resource" uid="uid://3cx7w2u78ki0" path="res://common_cards/curses/doubt.tres" id="15_6na2v"]
 
 [resource]
 script = ExtResource("2_bk8hh")
-cards = Array[ExtResource("1_e0fcj")]([ExtResource("5_7axcj"), ExtResource("3_mxwt3"), ExtResource("3_mxwt3"), ExtResource("3_mxwt3"), ExtResource("3_mxwt3"), ExtResource("2_72uaj"), ExtResource("2_72uaj"), ExtResource("2_72uaj"), ExtResource("3_kyiwv"), ExtResource("6_g62ox")])
+cards = Array[ExtResource("1_e0fcj")]([ExtResource("2_m7ai2"), ExtResource("7_85nwi"), ExtResource("2_m7ai2"), ExtResource("8_1kjuq"), ExtResource("9_7ljou"), ExtResource("12_j5bvy"), ExtResource("12_pt3hb"), ExtResource("12_pt3hb"), ExtResource("12_pt3hb"), ExtResource("8_85nwi"), ExtResource("9_1kjuq"), ExtResource("10_f16q7"), ExtResource("11_6na2v"), ExtResource("12_0t4d5"), ExtResource("5_7ljou"), ExtResource("14_f16q7"), ExtResource("15_6na2v")])

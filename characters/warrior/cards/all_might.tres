@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d2ur8kjc4h276"]
+
+[ext_resource type="Script" uid="uid://dmkjjq6bd23t6" path="res://characters/warrior/cards/all_might.gd" id="1_jksew"]
+
+[resource]
+script = ExtResource("1_jksew")
+base_damage = 14
+id = ""
+name = ""
+type = 0
+rarity = 0
+target = 0
+cost = 0
+exhausts = false
+unplayable = false
+ethereal = false
+innate = false
+tooltip_text = ""
+metadata/_custom_type_script = "uid://dtdtresv3yc0e"

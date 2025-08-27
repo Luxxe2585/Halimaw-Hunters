@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bacy6btwj5k6b"]
 
 [ext_resource type="Script" uid="uid://dcql2u7hfuh7o" path="res://enemy/enemy.gd" id="1_g11pg"]
-[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://art/tile_0110.png" id="1_ol05f"]
-[ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://art/arrow.png" id="3_lr0j7"]
+[ext_resource type="Texture2D" uid="uid://co1o2fcvmcmcx" path="res://assets/monster_sprites/Agta.png" id="2_5ffra"]
+[ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://global/art/arrow.png" id="3_lr0j7"]
 [ext_resource type="PackedScene" uid="uid://djvksvihqwgwq" path="res://Scenes/ui/stats_ui.tscn" id="4_rnm7a"]
 [ext_resource type="PackedScene" uid="uid://d2nsn024j2m55" path="res://Scenes/ui/intent_ui.tscn" id="5_jxye3"]
 [ext_resource type="PackedScene" uid="uid://ub0sc5lnr5il" path="res://Scenes/status_handler/status_handler.tscn" id="6_1wwld"]
@@ -10,13 +10,29 @@
 [ext_resource type="PackedScene" uid="uid://dsuol6af734df" path="res://Scenes/modifier_handler/modifier.tscn" id="8_e355f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6dok"]
+size = Vector2(44, 80)
 
 [node name="Enemy" type="Area2D" groups=["enemies"]]
 collision_layer = 4
 script = ExtResource("1_g11pg")
 
+[node name="VBoxContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 32.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ol05f")
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_5ffra")
 
 [node name="Arrow" type="Sprite2D" parent="."]
 visible = false
@@ -28,21 +44,21 @@ texture = ExtResource("3_lr0j7")
 visible = false
 shape = SubResource("RectangleShape2D_o6dok")
 
-[node name="StatsUI" parent="." instance=ExtResource("4_rnm7a")]
-offset_top = 8.0
-offset_bottom = 24.0
-
 [node name="IntentUI" parent="." groups=["intent"] instance=ExtResource("5_jxye3")]
 offset_left = -19.0
-offset_top = -24.0
+offset_top = -42.0
 offset_right = 21.0
-offset_bottom = -10.0
+offset_bottom = -28.0
+
+[node name="StatsUI" parent="." instance=ExtResource("4_rnm7a")]
+offset_top = 29.0
+offset_bottom = 45.0
 
 [node name="StatusHandler" parent="." node_paths=PackedStringArray("status_owner") instance=ExtResource("6_1wwld")]
 offset_left = -25.0
-offset_top = 24.0
+offset_top = 45.0
 offset_right = -25.0
-offset_bottom = 24.0
+offset_bottom = 45.0
 status_owner = NodePath("..")
 
 [node name="ModifierHandler" parent="." instance=ExtResource("7_5ffra")]

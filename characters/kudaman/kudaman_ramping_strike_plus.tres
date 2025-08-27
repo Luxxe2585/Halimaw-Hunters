@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cdsagyi275lup"]
+
+[ext_resource type="Texture2D" uid="uid://088amhc2kqoj" path="res://assets/Card Art Kudaman/Ramping Strike_.png" id="1_tq12r"]
+[ext_resource type="Script" uid="uid://wpb5glmuidjw" path="res://characters/kudaman/kudaman_ramping_strike_plus.gd" id="2_tq12r"]
+[ext_resource type="AudioStream" uid="uid://bily2wmb8m1a2" path="res://assets/sfx/lightning-strike.mp3" id="3_tq12r"]
+
+[resource]
+script = ExtResource("2_tq12r")
+id = "kudaman_ramping_strike_plus"
+name = "Ramping  Strike+"
+type = 0
+rarity = 2
+target = 1
+cost = 1
+exhausts = false
+unplayable = false
+ethereal = false
+innate = false
+icon = ExtResource("1_tq12r")
+tooltip_text = "[center]Deal [color=\"ff0000\"]%s[/color] damage. +%s damage this combat.[/center]\""
+sound = ExtResource("3_tq12r")
+metadata/_custom_type_script = "uid://dtdtresv3yc0e"

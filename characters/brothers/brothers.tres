@@ -1,20 +1,21 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=5 format=3 uid="uid://bgat1xnhb2d18"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=6 format=3 uid="uid://bgat1xnhb2d18"]
 
-[ext_resource type="Texture2D" uid="uid://01cnuv5m4n6f" path="res://art/tile_0112.png" id="1_0wvcs"]
+[ext_resource type="Texture2D" uid="uid://dlx7qbgvw82o" path="res://assets/brothers.png" id="1_00fo4"]
 [ext_resource type="Script" uid="uid://cfsaiwghvda2o" path="res://custom_resources/character_stats.gd" id="1_ljrt8"]
 [ext_resource type="Resource" uid="uid://2evlkv6jthcs" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_m48ub"]
+[ext_resource type="Texture2D" uid="uid://ctm7yrklbk4ex" path="res://assets/Brothers Illustration.png" id="3_00fo4"]
 [ext_resource type="Resource" uid="uid://6u7ueynrf34c" path="res://characters/warrior/warrior_starting_deck.tres" id="3_k3ke7"]
 
 [resource]
 script = ExtResource("1_ljrt8")
-character_name = "Asu and Buyung"
-description = "Sons of Labaw Donggon.
-Skilled in the use of bows,
-knives, and poison."
-portrait = ExtResource("1_0wvcs")
+character_name = "Asu Mannga and Buyung Baranugon"
+description = "The sons of Labaw Donggon seeking to rescue their father.
+Skilled in the use of bows, knives, and poison.
+Satchel: Draw an extra card at combat start."
+portrait = ExtResource("3_00fo4")
 starting_deck = ExtResource("3_k3ke7")
 draftable_cards = ExtResource("2_m48ub")
 cards_per_turn = 4
 max_mana = 3
 max_health = 28
-art = ExtResource("1_0wvcs")
+art = ExtResource("1_00fo4")

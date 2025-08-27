@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://cw8k7y06filwj" path="res://Scenes/shop/shop.gd" id="1_velw8"]
 [ext_resource type="Resource" uid="uid://cr8yjnnyu817y" path="res://relic_pools/shop_relic_pool.tres" id="2_dbcck"]
-[ext_resource type="Texture2D" uid="uid://bj3im6egs4wxx" path="res://art/tile_0086.png" id="2_usl5o"]
-[ext_resource type="Texture2D" uid="uid://ckcu10uwektms" path="res://art/shopkeeper_blink.png" id="3_gcthl"]
+[ext_resource type="Texture2D" uid="uid://bj3im6egs4wxx" path="res://global/art/tile_0086.png" id="2_usl5o"]
+[ext_resource type="Texture2D" uid="uid://ckcu10uwektms" path="res://global/art/shopkeeper_blink.png" id="3_gcthl"]
 [ext_resource type="PackedScene" uid="uid://dg2q1i3jilfqx" path="res://Scenes/shop/shop_card.tscn" id="4_gcthl"]
 [ext_resource type="PackedScene" uid="uid://bd2kwrjhru20s" path="res://Scenes/ui/card_tooltip_popup.tscn" id="5_6w1mx"]
 [ext_resource type="PackedScene" uid="uid://7w3n12w3b1ae" path="res://Scenes/shop/shop_relic.tscn" id="5_ajxfk"]
-[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="6_5rd8g"]
+[ext_resource type="Texture2D" uid="uid://letp8o1jdk3a" path="res://global/art/gold.png" id="7_5he0o"]
 [ext_resource type="PackedScene" uid="uid://cjynvbt1f00sr" path="res://Scenes/modifier_handler/modifier_handler.tscn" id="13_5iimv"]
 [ext_resource type="PackedScene" uid="uid://dsuol6af734df" path="res://Scenes/modifier_handler/modifier.tscn" id="14_s12wo"]
 
@@ -172,6 +172,10 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="UILayer/ShopContent"]
 layout_mode = 2
 
+[node name="Control" type="Control" parent="UILayer/ShopContent/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
 [node name="Relics" type="HBoxContainer" parent="UILayer/ShopContent/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -186,14 +190,37 @@ layout_mode = 2
 [node name="ShopRelic3" parent="UILayer/ShopContent/HBoxContainer/Relics" instance=ExtResource("5_ajxfk")]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="UILayer/ShopContent/HBoxContainer"]
-custom_minimum_size = Vector2(14, 0)
+[node name="Control2" type="Control" parent="UILayer/ShopContent/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
 layout_mode = 2
 
-[node name="CardRemover" type="Button" parent="UILayer/ShopContent/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/ShopContent/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Price" type="HBoxContainer" parent="UILayer/ShopContent/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_5rd8g")
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="RemoverPrice" type="Label" parent="UILayer/ShopContent/HBoxContainer/VBoxContainer/Price"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "998"
+
+[node name="GoldIcon" type="TextureRect" parent="UILayer/ShopContent/HBoxContainer/VBoxContainer/Price"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+texture = ExtResource("7_5he0o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CardRemover" type="Button" parent="UILayer/ShopContent/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(33, 30)
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 6
 text = "Card 
 Remover"
@@ -208,4 +235,4 @@ visible = false
 type = 3
 
 [connection signal="pressed" from="UILayer/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="UILayer/ShopContent/HBoxContainer/CardRemover" to="." method="_on_card_remover_pressed"]
+[connection signal="pressed" from="UILayer/ShopContent/HBoxContainer/VBoxContainer/CardRemover" to="." method="_on_card_remover_pressed"]

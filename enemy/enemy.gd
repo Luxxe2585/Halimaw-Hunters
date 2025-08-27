@@ -2,7 +2,8 @@ class_name Enemy
 extends Area2D
 
 const ARROW_OFFSET := 5
-const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
+const WHITE_SPRITE_MATERIAL := preload("res://global/art/white_sprite_material.tres")
+const UI_SPACING := 2
 
 @export var stats: EnemyStats : set = set_enemy_stats
 
@@ -12,6 +13,7 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
 @onready var intent_ui: IntentUI = $IntentUI 
 @onready var status_handler: StatusHandler = $StatusHandler
 @onready var modifier_handler: ModifierHandler = $ModifierHandler
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction : set = set_current_action
@@ -70,9 +72,30 @@ func update_enemy() -> void:
 		await ready
 	
 	sprite_2d.texture = stats.art
+	var scaled_sprite_size = sprite_2d.get_rect().size * sprite_2d.scale
 	arrow.position = Vector2.RIGHT * (sprite_2d.get_rect().size.x / 2 + ARROW_OFFSET)
+	collision_shape.shape.size = scaled_sprite_size
 	setup_ai()
 	update_stats()
+	call_deferred("position_ui_elements")
+
+
+func position_ui_elements() -> void:
+	var sprite_size = sprite_2d.get_rect().size * sprite_2d.scale
+	var sprite_top = -sprite_size.y / 2
+	var sprite_bottom = sprite_size.y / 2
+	
+	# Position intent_ui above sprite
+	if intent_ui:
+		intent_ui.position.y = sprite_top - intent_ui.size.y - UI_SPACING
+	
+	# Position stats_ui below sprite
+	if stats_ui:
+		stats_ui.position.y = sprite_bottom + UI_SPACING
+		
+		# Position status_handler below stats_ui
+		if status_handler:
+			status_handler.position.y = stats_ui.position.y + stats_ui.size.y + UI_SPACING
 
 
 func update_intent() -> void:
@@ -88,6 +111,10 @@ func do_turn() -> void:
 		return
 	
 	current_action.perform_action()
+
+
+func get_modified_block_gain(base_block: int) -> int:
+	return modifier_handler.get_modified_value(base_block, Modifier.Type.BLOCK_GAINED)
 
 
 func take_damage(damage: int, which_modifier: Modifier.Type) -> void:

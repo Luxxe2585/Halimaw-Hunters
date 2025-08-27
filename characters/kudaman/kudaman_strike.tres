@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://clpptd7a8batm"]
+
+[ext_resource type="Texture2D" uid="uid://bnbgr163jksf3" path="res://assets/Card Art Kudaman/Strike_.png" id="1_y0udl"]
+[ext_resource type="Script" uid="uid://us18uyochhpn" path="res://characters/kudaman/kudaman_strike.gd" id="2_38oya"]
+[ext_resource type="AudioStream" uid="uid://b4ob6eraq5nqv" path="res://assets/sfx/big-punch-with-whoosh.mp3" id="3_y0udl"]
+[ext_resource type="Resource" uid="uid://cx481ch8iun0k" path="res://characters/kudaman/kudaman_strike_plus.tres" id="4_pdnt1"]
+
+[resource]
+script = ExtResource("2_38oya")
+id = "kudaman_strike"
+name = "Strike"
+type = 0
+rarity = 0
+target = 1
+cost = 1
+exhausts = false
+unplayable = false
+ethereal = false
+innate = false
+icon = ExtResource("1_y0udl")
+tooltip_text = "[center]Deal [color=\"ff0000\"]%s[/color] damage.[/center]"
+sound = ExtResource("3_y0udl")
+upgrade = ExtResource("4_pdnt1")

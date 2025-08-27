@@ -1,17 +1,17 @@
 [gd_resource type="Resource" script_class="CardPile" load_steps=11 format=3 uid="uid://2evlkv6jthcs"]
 
 [ext_resource type="Script" uid="uid://dtdtresv3yc0e" path="res://custom_resources/card.gd" id="1_ads5s"]
-[ext_resource type="Resource" uid="uid://cg3ydmig1j6sd" path="res://characters/warrior/cards/warrior_true_strength.tres" id="2_01wkr"]
+[ext_resource type="Resource" uid="uid://cg3ydmig1j6sd" path="res://characters/kudaman/kudaman_fury.tres" id="2_01wkr"]
 [ext_resource type="Script" uid="uid://c64c61pg3gu04" path="res://custom_resources/card_pile.gd" id="2_fcyjj"]
 [ext_resource type="Resource" uid="uid://bi2pjinwnglpl" path="res://characters/warrior/cards/warrior_rare_1.tres" id="3_ypb8s"]
 [ext_resource type="Resource" uid="uid://dnyu54ag1gknv" path="res://characters/warrior/cards/warrior_rare_2.tres" id="4_2ypy4"]
-[ext_resource type="Resource" uid="uid://i8urcy5t3s7v" path="res://characters/warrior/cards/warrior_slash.tres" id="4_ypb8s"]
-[ext_resource type="Resource" uid="uid://dps888r8j8jf3" path="res://characters/warrior/cards/warrior_big_slam.tres" id="6_wlxe0"]
+[ext_resource type="Resource" uid="uid://i8urcy5t3s7v" path="res://characters/kudaman/kudaman_sweep.tres" id="4_ypb8s"]
+[ext_resource type="Resource" uid="uid://dps888r8j8jf3" path="res://characters/kudaman/kudaman_crippling_blow.tres" id="6_wlxe0"]
 [ext_resource type="Resource" uid="uid://dsly7oh6ypipy" path="res://characters/warrior/cards/warrior_trickster.tres" id="7_11m5d"]
-[ext_resource type="Resource" uid="uid://df3sfhu1q5t3j" path="res://characters/warrior/cards/warrior_sharp_knife.tres" id="8_ypb8s"]
-[ext_resource type="Resource" uid="uid://kc7oumno0dhp" path="res://characters/warrior/cards/warrior_angry_anvil.tres" id="9_2ypy4"]
+[ext_resource type="Resource" uid="uid://df3sfhu1q5t3j" path="res://characters/kudaman/kudaman_ramping_strike.tres" id="8_ypb8s"]
+[ext_resource type="Resource" uid="uid://kc7oumno0dhp" path="res://characters/kudaman/kudaman_costly_defense.tres" id="9_2ypy4"]
 
 [resource]
 script = ExtResource("2_fcyjj")
-cards = Array[ExtResource("1_ads5s")]([ExtResource("2_01wkr"), ExtResource("4_ypb8s"), ExtResource("4_2ypy4"), ExtResource("3_ypb8s"), ExtResource("6_wlxe0"), ExtResource("6_wlxe0"), ExtResource("4_ypb8s"), ExtResource("4_ypb8s"), ExtResource("4_ypb8s"), ExtResource("6_wlxe0"), ExtResource("7_11m5d"), ExtResource("8_ypb8s"), ExtResource("9_2ypy4")])
+cards = Array[ExtResource("1_ads5s")]([ExtResource("2_01wkr"), ExtResource("4_ypb8s"), ExtResource("4_2ypy4"), ExtResource("3_ypb8s"), ExtResource("4_ypb8s"), ExtResource("4_ypb8s"), ExtResource("4_ypb8s"), ExtResource("6_wlxe0"), ExtResource("7_11m5d"), ExtResource("8_ypb8s"), ExtResource("9_2ypy4"), ExtResource("6_wlxe0")])
 metadata/_custom_type_script = "uid://c64c61pg3gu04"
